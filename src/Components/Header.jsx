@@ -13,13 +13,23 @@ const Header = () => {
 
     const wander = useNavigator();
 
-    return(
-        <div classname="headerDesign">
-            <div className="linkDesign" onClick={()=>wander("/")}>Peliculas</div>
-            <div className="linkDesign" onClick={()=>wander("/")}>Series</div>
-            <div className="linkDesign" onClick={()=>wander("/")}>Login</div>
-            <div className="linkDesign" onClick={()=>wander("/")}>Register</div>
-            <div className="linkDesign" onClick={()=>wander("/")}>Carrito</div>
+    return (
+        <div className="headerDesign">
+            <div>
+                <div className="linkPelis" onClick={()=>wander("/")}>Peliculas</div>
+            </div>
+            <div>
+                <div className="linkSeries" onClick={()=>wander("/")}>Series</div>
+            </div>
+            <div>
+                <div className="linkLogin" onClick={()=>wander("/")}>Login</div>
+            </div>
+            <div>
+                <div className="linkRegister" onClick={()=>wander("/")}>Register</div>
+            </div>
+            <div>
+                <div className="linkCarrito">Carrito</div>
+            </div>
         </div>
     )
 }
