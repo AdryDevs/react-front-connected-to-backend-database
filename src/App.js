@@ -1,4 +1,5 @@
 import './App.css';
+import React, { useState, useEffect } from "react";
 
 
 import Header from './Components/Header.jsx'
@@ -9,6 +10,24 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 // import Series from './Components';
 
 function App() {
+  let [pageNumber,setPageNumber]=useState(1);
+  let [fetchedData,updateFetchData] = useState([]);
+
+  //Info y results son parte del JSON que devuelve la api de rick y morty
+  let {info,results}=fetchedData;
+
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  console.log(results);
+
+  useEffect(()=>{
+    //IIFE
+    (async function(){
+      let data= await fetch(api).then(res=>res.json())
+      updateFetchData(data);
+    })()
+
+  },[api])
+  
   return (
     <div className="App">
       <BrowserRouter>
