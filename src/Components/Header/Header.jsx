@@ -44,6 +44,9 @@ const Header = () => {
     return (
         <div className="headerDesign">
             <div>
+                <div className="headerWord" onClick={() => navigate("/")}>Home</div>
+            </div>
+            <div>
                 <div className="headerWord" onClick={() => navigate("/movies")}>Movies</div>
             </div>
             <div>
@@ -58,9 +61,7 @@ const Header = () => {
             <div>
                 <div className="headerWord" onClick={() => navigate("/orders")}>Carrito</div>
             </div>
-            <div>
-                <div className="headerWord" onClick={() => navigate("/")}>Home</div>
-            </div>
+
         </div>
 
 
