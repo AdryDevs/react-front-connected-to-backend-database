@@ -44,22 +44,22 @@ const Header = () => {
     return (
         <div className="headerDesign">
             <div>
-                <div id="headerWord" className="linkPelis" onClick={() => navigate("/movies")}>Movies</div>
+                <div className="headerWord" onClick={() => navigate("/movies")}>Movies</div>
             </div>
             <div>
-                <div id="headerWord" className="linkSeries" onClick={() => navigate("/series")}>Series</div>
+                <div className="headerWord" onClick={() => navigate("/series")}>Series</div>
             </div>
             <div>
-                <div id="headerWord" className="linkLogin" onClick={() => navigate("/login")}>Login</div>
+                <div className="headerWord" onClick={() => navigate("/login")}>Login</div>
             </div>
             <div>
-                <div id="headerWord" className="linkRegister" onClick={() => navigate("/register")}>Register</div>
+                <div className="headerWord" onClick={() => navigate("/register")}>Register</div>
             </div>
             <div>
-                <div id="headerWord" className="linkCarrito" onClick={() => navigate("/orders")}>Carrito</div>
+                <div className="headerWord" onClick={() => navigate("/orders")}>Carrito</div>
             </div>
             <div>
-                <div id="headerWord" className="linkCarrito" onClick={() => navigate("../../Containers/Home/Home.jsx")}>Home</div>
+                <div className="headerWord" onClick={() => navigate("/")}>Home</div>
             </div>
         </div>
 
