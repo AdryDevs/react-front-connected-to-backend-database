@@ -58,6 +58,9 @@ const Header = () => {
             <div>
                 <div id="headerWord" className="linkCarrito" onClick={() => navigate("/orders")}>Carrito</div>
             </div>
+            <div>
+                <div id="headerWord" className="linkCarrito" onClick={() => navigate("../../Containers/Home/Home.jsx")}>Home</div>
+            </div>
         </div>
 
 
