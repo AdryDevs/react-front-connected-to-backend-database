@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 
 
-// import Login from './Components';
+// 
 // import Register from './Components';
 // import Pelis from './Components';
 // import Series from './Components';
@@ -12,7 +12,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 // Import the component
 
 import Home from './Containers/Home/Home';
-import Header from './Components/Header/Header'
+import Header from './Components/Header/Header';
+import Login from './Containers/Login/Login';
 
 
 function App() {
@@ -43,9 +44,7 @@ function App() {
         <Routes>
           
           <Route path="/" element={<Home/>}/>
-
-          
-        
+          <Route path="/login" element={<Login/>}/>
         
         </Routes>
 
