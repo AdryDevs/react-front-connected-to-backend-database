@@ -1,38 +1,68 @@
-import React, { useNavigate } from "react-router-dom";
+import React from "react";
+import { Navigate, useNavigator } from "react-router-dom";
+import './Header.scss';
+import { useSelector, useDispatch } from "react-redux";
+import { Navigate } from "react-router-dom";
+
+// import { userData, userout } from "../../Containers/User/userSlice";
 
 
-import './Header.css';
+const navigator = navigator 
+const userData = userData 
+const userout = userout
+const Navigator = Navigator
+const useNavigator = useNavigator
 
-// Pelis
-// Series
-// Login
-// Register
-// carrito
 
 
 const Header = () => {
 
-    const navigate = useNavigate();
+    const navigate = useNavigator();
+    const userReduxCredentials = useSelector(userData);
+    const dispatch = useDispatch();
 
-    return (
-        <div className="headerDesign">
+    const logout = () => {
+        dispatch(userout({ credentials: {} }))
+        return Navigate("./Home");
+    }
+
+    // if (userReduxCredentials?.credentials?.token !== undefined) {
+
+        return (
+            <div className="headerDesign">
+                <div>
+                    <div id="headerWord" className="linkPelis" onClick={() => navigate("/movies")}>Movies</div>
+                </div>
+                <div>
+                    <div id="headerWord" className="linkSeries" onClick={() => navigate("/series")}>Series</div>
+                </div>
+                <div>
+                    <div id="headerWord" className="linkSeries" onClick={() => navigate("/logout")}>Logout</div>
+                </div>
+            </div>
+        )
+    // } else {
+        return (
+         <div className="headerDesign">
             <div>
-                <div className="linkPelis" onClick={()=>navigate("/")}>Peliculas</div>
+                <div id="headerWord" className="linkLogin" onClick={()=>navigate("/")}>Login</div>
             </div>
             <div>
-                <div className="linkSeries" onClick={()=>navigate("/")}>Series</div>
+                <div id="headerWord" className="linkRegister" onClick={()=>navigate("/")}>Register</div>
             </div>
             <div>
-                <div className="linkLogin" onClick={()=>navigate("/login")}>Login</div>
+                <div id="headerWord" className="linkCarrito">Carrito</div>
             </div>
-            <div>
-                <div className="linkRegister" onClick={()=>navigate("/")}>Register</div>
-            </div>
-            <div>
-                <div className="linkCarrito">Carrito</div>
-            </div>
-        </div>
+         </div>
+            
+
+        
     )
 }
+// }
+
+
+
+
 
 export default Header;
