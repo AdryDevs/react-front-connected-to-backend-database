@@ -13,8 +13,6 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 import Home from './Containers/Home/Home';
 import Header from './Components/Header/Header';
-// import Login from './Containers/Login/Login';
-
 import Login from "./Containers/Login/Login"
 
 function App() {
@@ -45,7 +43,7 @@ function App() {
         <Routes>
           
           <Route path="/" element={<Home/>}/>
-          {/* <Route path="/login" element={<Login/>}/> */}
+          <Route path="/login" element={<Login/>}/>
         
         </Routes>
 
