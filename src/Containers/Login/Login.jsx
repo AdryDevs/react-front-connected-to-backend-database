@@ -14,7 +14,7 @@ const Login = () =>{
 <Form className="login-form"
       name="basic"
       labelCol={{
-        span: 8,
+        span: 5,
       }}
       wrapperCol={{
         span: 16,
@@ -26,7 +26,7 @@ const Login = () =>{
       onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
-      <Form.Item
+ <Form.Item
         label="Username"
         name="username"
         rules={[
