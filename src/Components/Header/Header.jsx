@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import './Header.scss';
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 
 // import { userData, userout } from "../../Containers/User/userSlice";
 
@@ -18,7 +18,7 @@ const Header = () => {
 
     const navigate = useNavigate();
     // const userReduxCredentials = useSelector(userData);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const logout = () => {
         // dispatch(userout({ credentials: {} }))
