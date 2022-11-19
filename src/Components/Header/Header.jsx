@@ -1,28 +1,27 @@
 import React from "react";
-import { Navigate, useNavigator } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import './Header.scss';
 import { useSelector, useDispatch } from "react-redux";
-import { Navigate } from "react-router-dom";
 
 // import { userData, userout } from "../../Containers/User/userSlice";
 
 
-const navigator = navigator 
-const userData = userData 
-const userout = userout
-const Navigator = Navigator
-const useNavigator = useNavigator
+// const navigator = navigator 
+// const userData = userData 
+// const userout = userout
+// const Navigator = Navigator
+// const useNavigator = useNavigator
 
 
 
 const Header = () => {
 
-    const navigate = useNavigator();
-    const userReduxCredentials = useSelector(userData);
+    const navigate = useNavigate();
+    // const userReduxCredentials = useSelector(userData);
     const dispatch = useDispatch();
 
     const logout = () => {
-        dispatch(userout({ credentials: {} }))
+        // dispatch(userout({ credentials: {} }))
         return Navigate("./Home");
     }
 
@@ -42,22 +41,22 @@ const Header = () => {
             </div>
         )
     // } else {
-        return (
-         <div className="headerDesign">
-            <div>
-                <div id="headerWord" className="linkLogin" onClick={()=>navigate("/")}>Login</div>
-            </div>
-            <div>
-                <div id="headerWord" className="linkRegister" onClick={()=>navigate("/")}>Register</div>
-            </div>
-            <div>
-                <div id="headerWord" className="linkCarrito">Carrito</div>
-            </div>
-         </div>
+    //     return (
+    //      <div className="headerDesign">
+    //         <div>
+    //             <div id="headerWord" className="linkLogin" onClick={()=>navigate("/")}>Login</div>
+    //         </div>
+    //         <div>
+    //             <div id="headerWord" className="linkRegister" onClick={()=>navigate("/")}>Register</div>
+    //         </div>
+    //         <div>
+    //             <div id="headerWord" className="linkCarrito">Carrito</div>
+    //         </div>
+    //      </div>
             
 
         
-    )
+    // )
 }
 // }
 
