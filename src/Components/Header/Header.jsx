@@ -1,5 +1,5 @@
-import React from "react";
-import { useNavigator} from "react-router-dom";
+import React, { useNavigate } from "react-router-dom";
+
 import './Header.css';
 
 // Pelis
@@ -11,7 +11,7 @@ import './Header.css';
 
 const Header = () => {
 
-    const wander = useNavigator();
+    const wander = useNavigate();
 
     return (
         <div className="headerDesign">

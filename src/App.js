@@ -1,9 +1,9 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
-
-
-import Header from './Components/Header.jsx'
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
+
+
+
 // import Login from './Components';
 // import Register from './Components';
 // import Pelis from './Components';
@@ -12,6 +12,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 // Import the component
 
 import Home from './Containers/Home/Home';
+import Header from './Components/Header/Header'
+
 
 function App() {
   let [pageNumber,setPageNumber]=useState(1);
@@ -36,16 +38,19 @@ function App() {
     <div className="App">
       <BrowserRouter>
 
-      <Home />
+        <Header/>
 
-       <Header/>
-       <Routes>
-        <Route path={"/Pelis"} element={<Pelis/>}/>
-        <Route path={"/Series"} element={<Series/>}/>
-        <Route path={"/login"} element={<Login/>}/>
-        <Route path={"/register"} element={<Register/>}/>
-       </Routes>
-       </BrowserRouter>
+        <Routes>
+          
+          <Route path="/" element={<Home/>}/>
+
+          
+        
+        
+        </Routes>
+
+      </BrowserRouter>     
+
     </div>
   );
 }
