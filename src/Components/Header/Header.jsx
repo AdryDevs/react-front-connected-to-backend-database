@@ -17,7 +17,7 @@ const useNavigator = useNavigator
 
 const Header = () => {
 
-    const wander = useNavigator();
+    const navigate = useNavigator();
     const userReduxCredentials = useSelector(userData);
     const dispatch = useDispatch();
 
@@ -31,13 +31,13 @@ const Header = () => {
         return (
             <div className="headerDesign">
                 <div>
-                    <div id="headerWord" className="linkPelis" onClick={() => wander("/movies")}>Movies</div>
+                    <div id="headerWord" className="linkPelis" onClick={() => navigate("/movies")}>Movies</div>
                 </div>
                 <div>
-                    <div id="headerWord" className="linkSeries" onClick={() => wander("/series")}>Series</div>
+                    <div id="headerWord" className="linkSeries" onClick={() => navigate("/series")}>Series</div>
                 </div>
                 <div>
-                    <div id="headerWord" className="linkSeries" onClick={() => wander("/logout")}>Logout</div>
+                    <div id="headerWord" className="linkSeries" onClick={() => navigate("/logout")}>Logout</div>
                 </div>
             </div>
         )
@@ -45,10 +45,10 @@ const Header = () => {
         return (
          <div className="headerDesign">
             <div>
-                <div id="headerWord" className="linkLogin" onClick={()=>wander("/")}>Login</div>
+                <div id="headerWord" className="linkLogin" onClick={()=>navigate("/")}>Login</div>
             </div>
             <div>
-                <div id="headerWord" className="linkRegister" onClick={()=>wander("/")}>Register</div>
+                <div id="headerWord" className="linkRegister" onClick={()=>navigate("/")}>Register</div>
             </div>
             <div>
                 <div id="headerWord" className="linkCarrito">Carrito</div>
