@@ -27,35 +27,41 @@ const Header = () => {
 
     // if (userReduxCredentials?.credentials?.token !== undefined) {
 
-        // return (
-        //     <div className="headerDesign">
-        //         <div>
-        //             <div id="headerWord" className="linkPelis" onClick={() => navigate("/movies")}>Movies</div>
-        //         </div>
-        //         <div>
-        //             <div id="headerWord" className="linkSeries" onClick={() => navigate("/series")}>Series</div>
-        //         </div>
-        //         <div>
-        //             <div id="headerWord" className="linkSeries" onClick={() => navigate("/logout")}>Logout</div>
-        //         </div>
-        //     </div>
-        // )
+    // return (
+    //     <div className="headerDesign">
+    //         <div>
+    //             <div id="headerWord" className="linkPelis" onClick={() => navigate("/movies")}>Movies</div>
+    //         </div>
+    //         <div>
+    //             <div id="headerWord" className="linkSeries" onClick={() => navigate("/series")}>Series</div>
+    //         </div>
+    //         <div>
+    //             <div id="headerWord" className="linkSeries" onClick={() => navigate("/logout")}>Logout</div>
+    //         </div>
+    //     </div>
+    // )
     // } else {
-        return (
-         <div className="headerDesign">
+    return (
+        <div className="headerDesign">
             <div>
-                <div id="headerWord" className="linkLogin" onClick={()=>navigate("/login")}>Login</div>
+                <div id="headerWord" className="linkPelis" onClick={() => navigate("/movies")}>Movies</div>
             </div>
             <div>
-                <div id="headerWord" className="linkRegister" onClick={()=>navigate("/register")}>Register</div>
+                <div id="headerWord" className="linkSeries" onClick={() => navigate("/series")}>Series</div>
             </div>
             <div>
-                <div id="headerWord" className="linkCarrito" onClick={()=>navigate("/orders")}>Carrito</div>
+                <div id="headerWord" className="linkLogin" onClick={() => navigate("/login")}>Login</div>
             </div>
-         </div>
-            
+            <div>
+                <div id="headerWord" className="linkRegister" onClick={() => navigate("/register")}>Register</div>
+            </div>
+            <div>
+                <div id="headerWord" className="linkCarrito" onClick={() => navigate("/orders")}>Carrito</div>
+            </div>
+        </div>
 
-        
+
+
     )
 }
 
