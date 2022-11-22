@@ -1,9 +1,42 @@
 import React from 'react'
+import { Card } from 'antd'
+import "./Movies.scss";
+import InfiniteScroll from "react-infinite-scroll-component";
 
-export default function Movies() {
+const { Meta } = Card
+
+const Movies = () => {
   return (
-    <div>
-        Movies
+    <div className='moviesDesign'>
+      <Card
+        hoverable
+        style={{ width: 230 }}
+        cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+      >
+        <Meta title="Europe Street beat" description="www.instagram.com" />
+      </Card>
+
+      <Card
+        hoverable
+        style={{ width: 230 }}
+        cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+      >
+        <Meta title="Europe Street beat" description="www.instagram.com" />
+      </Card>
+
+      <Card
+        hoverable
+        style={{ width: 230 }}
+        cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+      >
+        <Meta title="Europe Street beat" description="www.instagram.com" />
+      </Card>
     </div>
   )
 }
+
+
+
+
+
+export default Movies
