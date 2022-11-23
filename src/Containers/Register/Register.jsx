@@ -9,9 +9,6 @@ const Register = () =>{
         console.log('Failed:', errorInfo);
       };
 
-      const strongRegex = new RegExp("^((?=.{8,}))");
-
-
     return (
         <div className="principal">
 <br />
@@ -80,10 +77,22 @@ const Register = () =>{
             message: 'Please input your password!',
           },
             {
-              type: "regexp",
-              pattern: strongRegex,
-              message: "Wrong format!"
+              pattern: /[?=.*[0-9]]*/,
+              message: "Password must contain a number!"
             },
+            {
+              pattern: /[?=.*[a-z]]*/,
+              message: "Password must contain at least 1 lower case!"
+            },
+            {
+              pattern: /[?=.*[A-Z]]*/,
+              message: "Password must contain at least 1 upper case!"
+            },
+            {
+              pattern: /[[a-zA-Z0-9]{8,}]*/,
+              message: "Password must contain at least 8 characters!"
+            },
+            
         ]}
       >
         <Input.Password />
