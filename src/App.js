@@ -14,6 +14,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './Containers/Home/Home';
 import Header from './Components/Header/Header';
 import Login from "./Containers/Login/Login"
+import Series from './Containers/Series/Series';
 
 function App() {
   let [pageNumber,setPageNumber]=useState(1);
@@ -44,6 +45,7 @@ function App() {
           
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/series" element={<Series/>}/>
         
         </Routes>
 
