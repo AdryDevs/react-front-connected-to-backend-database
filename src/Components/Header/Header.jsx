@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, Row, Col } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { SettingOutlined, UserOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Navigate,useNavigate } from 'react-router-dom';
 const Header = () => {
 
@@ -34,9 +34,13 @@ const Header = () => {
     </Menu.Item>
     </Col> */}
     <Col xs={3} sm={3} md={3} lg={3}>
-    <Menu.SubMenu key="SubMenu" title="User" icon={<SettingOutlined />}>
-      <Menu.Item key="two" icon={<AppstoreOutlined />}>
-        User
+        
+    <Menu.SubMenu key="SubMenu" title="User" icon={<UserOutlined />}>
+      <Menu.Item key="two" icon={<SettingOutlined />}>
+        Modify Profile
+      </Menu.Item>
+      <Menu.Item key="two" icon={<LogoutOutlined />}>
+        Logout
       </Menu.Item>
       
     </Menu.SubMenu>
