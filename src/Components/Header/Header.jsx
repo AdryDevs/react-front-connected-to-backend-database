@@ -1,68 +1,32 @@
-import React from "react";
-import { Navigate, useNavigator } from "react-router-dom";
-import './Header.scss';
-import { useSelector, useDispatch } from "react-redux";
-import { Navigate } from "react-router-dom";
-
-// import { userData, userout } from "../../Containers/User/userSlice";
-
-
-const navigator = navigator 
-const userData = userData 
-const userout = userout
-const Navigator = Navigator
-const useNavigator = useNavigator
-
-
-
+import React from 'react';
+import { Menu } from 'antd';
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { Navigate,useNavigate } from 'react-router-dom';
 const Header = () => {
 
-    const navigate = useNavigator();
-    const userReduxCredentials = useSelector(userData);
-    const dispatch = useDispatch();
-
-    const logout = () => {
-        dispatch(userout({ credentials: {} }))
-        return Navigate("./Home");
-    }
-
-    // if (userReduxCredentials?.credentials?.token !== undefined) {
-
-        return (
-            <div className="headerDesign">
-                <div>
-                    <div id="headerWord" className="linkPelis" onClick={() => navigate("/movies")}>Movies</div>
-                </div>
-                <div>
-                    <div id="headerWord" className="linkSeries" onClick={() => navigate("/series")}>Series</div>
-                </div>
-                <div>
-                    <div id="headerWord" className="linkSeries" onClick={() => navigate("/logout")}>Logout</div>
-                </div>
-            </div>
-        )
-    // } else {
-        return (
-         <div className="headerDesign">
-            <div>
-                <div id="headerWord" className="linkLogin" onClick={()=>navigate("/")}>Login</div>
-            </div>
-            <div>
-                <div id="headerWord" className="linkRegister" onClick={()=>navigate("/")}>Register</div>
-            </div>
-            <div>
-                <div id="headerWord" className="linkCarrito">Carrito</div>
-            </div>
-         </div>
-            
-
-        
+    const navigate=useNavigate();
+    return(
+  <Menu mode="horizontal" defaultSelectedKeys={['mail']}>
+    <Menu.Item key="mail" icon={<MailOutlined />}>
+    <Menu.Item className="headerWord" onClick={() => navigate("/login")}>Login</Menu.Item>
+    </Menu.Item>
+    <Menu.SubMenu key="SubMenu" title="Navigation Two - Submenu" icon={<SettingOutlined />}>
+      <Menu.Item key="two" icon={<AppstoreOutlined />}>
+        Navigation Two
+      </Menu.Item>
+      <Menu.Item key="three" icon={<AppstoreOutlined />}>
+        Navigation Three
+      </Menu.Item>
+      <Menu.ItemGroup title="Item Group">
+        <Menu.Item key="four" icon={<AppstoreOutlined />}>
+          Navigation Four
+        </Menu.Item>
+        <Menu.Item key="five" icon={<AppstoreOutlined />}>
+          Navigation Five
+        </Menu.Item>
+      </Menu.ItemGroup>
+    </Menu.SubMenu>
+  </Menu>
     )
-}
-// }
-
-
-
-
-
+    };
 export default Header;
