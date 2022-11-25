@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import NavLink from 'react-bootstrap/esm/NavLink';
 
 function Header() {
   return (
@@ -11,12 +12,12 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="../../Containers/Login">Login</Nav.Link>
-            <Nav.Link href="../../Containers/Register">Register</Nav.Link>
-            <Nav.Link href="../../Containers/Movies">Movies</Nav.Link>
-            <Nav.Link href="#link">Series</Nav.Link>
+            <Nav.Link href="/Login">Login</Nav.Link>
+            <Nav.Link href="/Register">Register</Nav.Link>
+            <Nav.Link href="/Movies">Movies</Nav.Link>
+            <Nav.Link href="/Series">Series</Nav.Link>
             <NavDropdown title="User" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Settings</NavDropdown.Item>
+              <NavDropdown.Item href="Settings">Settings</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
               </NavDropdown.Item>
