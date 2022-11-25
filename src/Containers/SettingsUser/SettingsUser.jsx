@@ -23,7 +23,7 @@ const Settings = () =>{
       autoComplete="off"
     >
          <Form.Item
-        label="Username"
+        label="Change your Name"
         name="username"
         hasFeedback
         rules={[
@@ -36,7 +36,7 @@ const Settings = () =>{
         <Input />
       </Form.Item>
  <Form.Item
-        label="Email"
+        label="Change your Email"
         name="email"
         hasFeedback
         rules={[
