@@ -15,6 +15,7 @@ import Home from './Containers/Home/Home';
 import Header from './Components/Header/Header';
 import Login from "./Containers/Login/Login";
 import Register from "./Containers/Register/Register";
+import RegisterScreen from "./Components/RegisterScreen/RegisterScreen";
 
 function App() {
   let [pageNumber,setPageNumber]=useState(1);
@@ -39,12 +40,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
 
-        <Header/>
+        {/* <Header/> */}
         <Routes>
           
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/register" element={<Register/>}/>
+          <Route path="/register" element={<RegisterScreen/>}/>
 
         </Routes>
 
