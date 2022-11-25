@@ -14,10 +14,11 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './Containers/Home/Home';
 import Header from './Components/Header/Header';
 import Login from "./Containers/Login/Login"
-import Movies from "./Containers/Movies/Movies"
+import Movies from "./Containers/Movies/Movies";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-    
+
   return (
     <div className="App">
       <BrowserRouter>
