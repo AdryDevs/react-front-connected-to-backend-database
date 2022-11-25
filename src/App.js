@@ -9,7 +9,6 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 
 // 
-// import Register from './Components';
 // import Pelis from './Components';
 // import Series from './Components';
 
