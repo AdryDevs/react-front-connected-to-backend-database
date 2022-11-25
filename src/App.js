@@ -15,6 +15,7 @@ import Home from './Containers/Home/Home';
 import Header from './Components/Header/Header';
 import Login from "./Containers/Login/Login";
 import Register from "./Containers/Register/Register";
+import Settings from "./Containers/SettingsUser/SettingsUser.jsx"
 
 function App() {
   let [pageNumber,setPageNumber]=useState(1);
@@ -45,6 +46,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
+          <Route path="/Settings" element={<Settings/>}/>
 
         </Routes>
 
