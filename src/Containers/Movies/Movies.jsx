@@ -1,9 +1,15 @@
 import React from 'react'
+import "./Movies.scss";
+import InfiniteScroll from "react-infinite-scroll-component";
 
-export default function Movies() {
+
+const Movies = () => {
   return (
-    <div>
-        Movies
+    <div className='moviesDesign'>
+      
     </div>
   )
 }
+
+
+export default Movies
