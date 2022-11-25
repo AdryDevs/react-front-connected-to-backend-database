@@ -1,158 +1,136 @@
-import React, {useState} from 'react';
-import {Form, Button,Row,Col,InputGroup} from 'react-bootstrap';
-import * as yup from 'yup';
-
-import  {Formik}  from 'formik';
-
-const schema = yup.object().shape({
-    firstName: yup.string().required(),
-    lastName: yup.string().required(),
-    username: yup.string().required(),
-    city: yup.string().required(),
-    state: yup.string().required(),
-    zip: yup.string().required(),
-    terms: yup.bool().required().oneOf([true], 'Terms must be accepted'),
-  });
+import React, { useState } from 'react';
+import { Form, Button, Row, Col, InputGroup } from 'react-bootstrap';
 
 const RegisterScreen = () => {
-    const [form,setForm]=useState({});
-    const  [errors,setErrors]=useState({});
-    const setField=(field,value) => {
-    setForm({
-        ...form,
-        [field]: value
-    })
+    const [form, setForm] = useState({});
+    const [errors, setErrors] = useState({});
+    const setField = (field, value) => {
+        setForm({
+            ...form,
+            [field]: value
+        })
+        if (!!errors[field])
+            setErrors({
+                ...errors,
+                [field]: null
+            })
     }
-    console.log("wtf");
+    const str = "hello world!";
+    const result = /^hello/.test(str);
+
+    const validateForm = () => {
+        const { username, email, dob, password, password2 } = form;
+        const newErrors = {};
+        if (!username || username === 'Enter username') newErrors.username = 'Please enter a username'
+        if (!email || email === 'Enter email') newErrors.email = 'Please enter an email'
+        if (!dob || dob === '') newErrors.dob = 'Please enter your date of birth'
+        if (!password || password === 'Enter your password') newErrors.password = 'Please enter a password'
+        else {
+            if (!/[?=.*[0-9]]*/.test(password)) newErrors.password = 'Password must contain a number'
+            if (!/[?=.*[a-z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 lower case'
+            console.log(newErrors)
+            if (!/[?=.*[A-Z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 upper case'
+            if (!/[[a-zA-Z0-9]{8,}]*/.test(password)) newErrors.password = 'Password must contain at least 8 characters'
+        }
+
+        if (!password2 || password2 === 'Repeat your password') newErrors.password2 = 'Please repeat your password'
+        else if (password2 !== password) newErrors.password2 = 'The passwords do not match'
+
+        return newErrors;
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const formErrors = validateForm();
+        if (Object.keys(formErrors).length > 0) {
+            setErrors(formErrors);
+        } else {
+            console.log("submited form")
+        }
+
+        console.log(form);
+    }
+
     return (
-        <Formik
-        validationSchema={schema}
-        onSubmit={console.log}
-        initialValues={{
-          firstName: 'Mark',
-          lastName: 'Otto',
-          username: '',
-          city: '',
-          state: '',
-          zip: '',
-          terms: false,
-        }}
-      >
-        {({
-          handleSubmit,
-          handleChange,
-          handleBlur,
-          values,
-          touched,
-          isValid,
-          errors,
-        }) => (
-          <Form noValidate onSubmit={handleSubmit}>
-            <Row className="mb-3">
-              <Form.Group as={Col} md="4" controlId="validationFormik01">
-                <Form.Label>First name</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="firstName"
-                  value={values.firstName}
-                  onChange={handleChange}
-                  isValid={touched.firstName && !errors.firstName}
-                />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationFormik02">
-                <Form.Label>Last name</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="lastName"
-                  value={values.lastName}
-                  onChange={handleChange}
-                  isValid={touched.lastName && !errors.lastName}
-                />
-  
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationFormikUsername">
+        <Form>
+            <Form.Group controlId='username'>
                 <Form.Label>Username</Form.Label>
-                <InputGroup hasValidation>
-                  <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-                  <Form.Control
-                    type="text"
-                    placeholder="Username"
-                    aria-describedby="inputGroupPrepend"
-                    name="username"
-                    value={values.username}
-                    onChange={handleChange}
+                <Form.Control
+                    placeholder='Enter username'
+                    value={form.username}
+                    onChange={(e) => setField('user-name', e.target.value)}
                     isInvalid={!!errors.username}
-                  />
-                  <Form.Control.Feedback type="invalid">
+                >
+                </Form.Control>
+                <Form.Control.Feedback type='invalid'>
                     {errors.username}
-                  </Form.Control.Feedback>
-                </InputGroup>
-              </Form.Group>
-            </Row>
-            <Row className="mb-3">
-              <Form.Group as={Col} md="6" controlId="validationFormik03">
-                <Form.Label>City</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="City"
-                  name="city"
-                  value={values.city}
-                  onChange={handleChange}
-                  isInvalid={!!errors.city}
-                />
-  
-                <Form.Control.Feedback type="invalid">
-                  {errors.city}
+
                 </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group as={Col} md="3" controlId="validationFormik04">
-                <Form.Label>State</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="State"
-                  name="state"
-                  value={values.state}
-                  onChange={handleChange}
-                  isInvalid={!!errors.state}
-                />
-                <Form.Control.Feedback type="invalid">
-                  {errors.state}
-                </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group as={Col} md="3" controlId="validationFormik05">
-                <Form.Label>Zip</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Zip"
-                  name="zip"
-                  value={values.zip}
-                  onChange={handleChange}
-                  isInvalid={!!errors.zip}
-                />
-  
-                <Form.Control.Feedback type="invalid">
-                  {errors.zip}
-                </Form.Control.Feedback>
-              </Form.Group>
-            </Row>
-            <Form.Group className="mb-3">
-              <Form.Check
-                required
-                name="terms"
-                label="Agree to terms and conditions"
-                onChange={handleChange}
-                isInvalid={!!errors.terms}
-                feedback={errors.terms}
-                feedbackType="invalid"
-                id="validationFormik0"
-              />
             </Form.Group>
-            <Button type="submit">Submit form</Button>
-          </Form>
-        )}
-      </Formik>
+            <Form.Group controlId='email'>
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                    type='email'
+                    placeholder='Enter email'
+                    value={form.email}
+                    onChange={(e) => setField('email', e.target.value)}
+                    isInvalid={!!errors.email}
+                >
+                </Form.Control>
+                <Form.Control.Feedback type='invalid'>
+                    {errors.email}
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId='dob'>
+                <Form.Label>Date of Birth</Form.Label>
+                <Form.Control
+                    type='date'
+                    placeholder='Enter date of birth'
+                    value={form.dob}
+                    onChange={(e) => setField('dob', e.target.value)}
+                    isInvalid={!!errors.dob}
+                >
+                </Form.Control>
+                <Form.Control.Feedback type='invalid'>
+                    {errors.dob}
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId='password'>
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                    type='password'
+                    placeholder='Enter your password'
+                    value={form.password}
+                    onChange={(e) => setField('password', e.target.value)}
+                    isInvalid={!!errors.password}
+                >
+                </Form.Control>
+                <Form.Control.Feedback type='invalid'>
+                    {errors.password}
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId='password2'>
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                    type='password'
+                    placeholder='Repeat your password'
+                    value={form.password2}
+                    onChange={(e) => setField('password2', e.target.value)}
+                    isInvalid={!!errors.password2}
+                >
+                </Form.Control>
+                <Form.Control.Feedback type='invalid'>
+                    {errors.password2}
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId='submit'>
+                <Button type='submit'
+                    onClick={handleSubmit} >
+                    Submit
+                </Button>
+            </Form.Group>
+        </Form>
     )
 }
 
