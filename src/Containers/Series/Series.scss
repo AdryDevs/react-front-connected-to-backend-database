@@ -1,25 +1,28 @@
-
-.leftSide{
-    height: 36em;
-    width: 30em;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-.serieDesign{
-    height: 36em;
-    width: 30em;
+.seriesShowcase {
+    height: 80vh;
+    width: 100vw;
 
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    grid-template-rows: (4, 1fr);
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    margin: 1em;
+
 }
 
-.seriePic{
+// .serieDesign{
+//     height: 36em;
+//     width: 30em;
+
+//     display: flex;
+//     flex-wrap: wrap;
+//     flex-direction: row;
+//     justify-content: space-around;
+//     align-items: center;
+//     margin: 1em;
+// }
+
+.seriePic {
     height: 16em;
     width: 10em;
 }
