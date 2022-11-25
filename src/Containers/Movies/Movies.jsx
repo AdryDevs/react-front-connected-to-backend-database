@@ -1,9 +1,14 @@
 import React from 'react'
+import "./Movies.scss";
 
-export default function Movies() {
+
+const Movies = () => {
   return (
-    <div>
-        Movies
+    <div className='moviesDesign'>
+      
     </div>
   )
 }
+
+
+export default Movies;
