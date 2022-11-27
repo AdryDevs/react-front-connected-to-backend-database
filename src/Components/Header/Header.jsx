@@ -1,48 +1,38 @@
-import React from 'react';
-import { Menu, Row, Col } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
-import { Navigate,useNavigate } from 'react-router-dom';
-const Header = () => {
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import NavLink from 'react-bootstrap/esm/NavLink'
+import './Header.scss'
 
-    const navigate=useNavigate();
-    return(
-        <Row>
-  <Menu mode="horizontal" defaultSelectedKeys={['mail']}>
-  <Col xs={3} sm={3} md={3} lg={3}>
-    <Menu.Item >
-    <Menu.Item className="headerWord" onClick={() => navigate("/login")}>Login</Menu.Item>
-    </Menu.Item>
-    </Col>
-    <Col xs={3} sm={3} md={3} lg={3}>
-    <Menu.Item >
-    <Menu.Item className="headerWord" onClick={() => navigate("/register")}>Register</Menu.Item>
-    </Menu.Item>
-    </Col>
-    <Col xs={3} sm={3} md={3} lg={3}>
-    <Menu.Item >
-    <Menu.Item className="headerWord" onClick={() => navigate("/movies")}>Movies</Menu.Item>
-    </Menu.Item>
-    </Col>
-    <Col xs={3} sm={3} md={3} lg={3}>
-    <Menu.Item >
-    <Menu.Item className="headerWord" onClick={() => navigate("/series")}>Series</Menu.Item>
-    </Menu.Item>
-    </Col>
-    {/* <Col xs={3} sm={3} md={3} lg={3}>
-    <Menu.Item >
-    <Menu.Item className="headerWord" onClick={() => navigate("/login")}>Login</Menu.Item>
-    </Menu.Item>
-    </Col> */}
-    <Col xs={3} sm={3} md={3} lg={3}>
-    <Menu.SubMenu key="SubMenu" title="User" icon={<SettingOutlined />}>
-      <Menu.Item key="two" icon={<AppstoreOutlined />}>
-        User
-      </Menu.Item>
-      
-    </Menu.SubMenu>
-    </Col>
-  </Menu>
-  </Row>
-    )
-    };
+function Header() {
+  return (
+    <Navbar className='Navbar' expand="lg">
+      <Container>
+        <Navbar.Brand href="/">Home</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/Login">Login</Nav.Link>
+            <Nav.Link href="/Register">Register</Nav.Link>
+            <Nav.Link href="/Movies">Movies</Nav.Link>
+            <Nav.Link href="/Series">Series</Nav.Link>
+            <NavDropdown className='UserSettings' title="User" id="basic-nav-dropdown">
+              <NavDropdown.Item href="Settings">Settings</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+}
+
 export default Header;
