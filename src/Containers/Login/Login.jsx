@@ -1,85 +1,50 @@
 import "./Login.scss"
-import React from 'react';
-import { Button, Checkbox, Form, Input, Col, Row } from 'antd';
-const Login = () => {
-  const onFinish = (values) => {
-    console.log('Success:', values);
-  };
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
+import React, { useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
 
-  return (
-    <Row>
-      <Col xs={1} sm={2} md={6} lg={7}></Col>
-      <Col xs={22} sm={20} md={12} lg={10}>
-      <div className="container">
-        <Form className="login-form"
-          name="basic"
-          labelCol={{
-            span: 5,
-          }}
-          wrapperCol={{
-            span: 16,
-          }}
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
-        >
-          <Form.Item
-            label="Username"
-            name="username"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your username!',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
+const Login = () =>{
+  const [form, setForm] = useState({});
+  const setField = (field, value) => {
+    setForm({
+        ...form,
+        [field]: value
+    })
+}
 
-          <Form.Item
-            label="Password"
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your password!',
-              },
-            ]}
-          >
-            <Input.Password />
-          </Form.Item>
+const handleSubmit = (e) => {
+  e.preventDefault()
+  console.log(form);
+}
 
-          <Form.Item
-            name="remember"
-            valuePropName="checked"
-            wrapperCol={{
-              offset: 8,
-              span: 16,
-            }}
-          >
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item>
+    return (
+<Form>
+            <Form.Group controlId='username'>
+                <Form.Label>Username</Form.Label>
+                <Form.Control
+                    placeholder='Enter username'
+                    value={form.username}
+                    onChange={(e) => setField('username', e.target.value)}
+                >
+                </Form.Control>
+            </Form.Group>
 
-          <Form.Item
-            wrapperCol={{
-              offset: 8,
-              span: 16,
-            }}
-          >
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
+            <Form.Group controlId='password'>
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                    type='password'
+                    placeholder='Enter your password'
+                    value={form.password}
+                    onChange={(e) => setField('password', e.target.value)}
+                >
+                </Form.Control>
+            </Form.Group>
+            <Form.Group controlId='submit'>
+                <Button type='submit'
+                    onClick={handleSubmit} >
+                    Submit
+                </Button>
+            </Form.Group>
         </Form>
-      </div>
-      </Col>
-    </Row>
   );
 }
 export default Login;
