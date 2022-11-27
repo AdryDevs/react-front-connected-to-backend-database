@@ -1,6 +1,7 @@
 import "./Login.scss"
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import axios from "axios";
 
 const Login = () =>{
   const [form, setForm] = useState({});
@@ -12,18 +13,31 @@ const Login = () =>{
 }
 
 const handleSubmit = (e) => {
+    let resp="";
   e.preventDefault()
   console.log(form);
+   axios.post("http://localhost:3002/auth/login",form)
+  .then(response=>{
+    console.log(response);
+    resp=response;
+    if(resp!==""){
+        localStorage.setItem('jwt', JSON.stringify(resp.data.jwt));
+      }
+      else{
+        console.log("No se ha guardado el token");
+      }
+  });
+
 }
 
     return (
 <Form>
-            <Form.Group controlId='username'>
+            <Form.Group controlId='email'>
                 <Form.Label>Username</Form.Label>
                 <Form.Control
                     placeholder='Enter username'
                     value={form.username}
-                    onChange={(e) => setField('username', e.target.value)}
+                    onChange={(e) => setField('email', e.target.value)}
                 >
                 </Form.Control>
             </Form.Group>

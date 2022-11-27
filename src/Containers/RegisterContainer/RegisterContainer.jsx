@@ -1,18 +1,17 @@
-import "./Register.scss"
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import RegisterScreen from "../../Components/RegisterScreen/RegisterScreen";
-const Register = () => {
+import Register from "../../Components/Register/Register";
+const RegisterContainer = () => {
   return (
     <Container fluid>
       <Row>
         <Col />
         <Col xs={10} sm={8} md={6} lg={5}>
-          <RegisterScreen />
+          <Register />
         </Col>
         <Col />
       </Row>
     </Container>
   );
 }
-export default Register;
+export default RegisterContainer;

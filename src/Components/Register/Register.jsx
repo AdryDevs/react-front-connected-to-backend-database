@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button, Row, Col, InputGroup } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
+import './Register.scss'
 
 const RegisterScreen = () => {
     const [form, setForm] = useState({});
@@ -15,8 +16,6 @@ const RegisterScreen = () => {
                 [field]: null
             })
     }
-    const str = "hello world!";
-    const result = /^hello/.test(str);
 
     const validateForm = () => {
         const { username, email, dob, password, password2 } = form;

@@ -14,8 +14,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 import Home from './Containers/Home/Home';
 import Header from './Components/Header/Header';
-import Login from "./Containers/Login/Login";
-import Register from "./Containers/Register/Register";
+import Login from "./Containers/LoginContainer/LoginContainer";
+import Register from "./Containers/RegisterContainer/RegisterContainer";
 import Movies from "./Containers/Movies/Movies"
 
 function App() {
