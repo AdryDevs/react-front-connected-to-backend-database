@@ -59,7 +59,7 @@ const RegisterScreen = () => {
                 <Form.Control
                     placeholder='Enter username'
                     value={form.username}
-                    onChange={(e) => setField('user-name', e.target.value)}
+                    onChange={(e) => setField('username', e.target.value)}
                     isInvalid={!!errors.username}
                 >
                 </Form.Control>
