@@ -1,8 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 // 
@@ -15,7 +13,7 @@ import Home from './Containers/Home/Home';
 import Header from './Components/Header/Header';
 import Login from "./Containers/Login/Login";
 import Register from "./Containers/Register/Register";
-import RegisterScreen from "./Components/RegisterScreen/RegisterScreen";
+import Movies from "./Containers/Movies/Movies"
 
 function App() {
   let [pageNumber,setPageNumber]=useState(1);
@@ -45,7 +43,8 @@ function App() {
           
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/register" element={<RegisterScreen/>}/>
+          <Route path="/movies" element={<Movies/>}/>
+          <Route path="/register" element={<Register/>}/>
 
         </Routes>
 
