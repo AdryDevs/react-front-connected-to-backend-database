@@ -1,6 +1,9 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Container} from 'react-bootstrap';
+
+
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 // 
@@ -35,7 +38,7 @@ function App() {
   },[api])
   
   return (
-    <div className="App">
+    <Container fluid className="App">
       <BrowserRouter>
 
         <Header/>
@@ -50,7 +53,7 @@ function App() {
 
       </BrowserRouter>     
 
-    </div>
+    </Container>
   );
 }
 

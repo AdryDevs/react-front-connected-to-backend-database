@@ -1,72 +1,51 @@
-import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
-import './Header.scss';
-// import { useSelector, useDispatch } from "react-redux";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import NavLink from 'react-bootstrap/esm/NavLink';
+import { Row, Col } from 'react-bootstrap';
+import './Header.scss'
 
-// import { userData, userout } from "../../Containers/User/userSlice";
+function Header() {
+  return (
+    <Row>
 
+      <Navbar className='Navbar' expand="sm">
+        <Container>
+          <Navbar.Brand href="/">Home</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Col>
+                <Nav.Link href="/Login">Login</Nav.Link>
+              </Col>
+              <Col>
+                <Nav.Link href="/Register">Register</Nav.Link>
+              </Col>
+              <Col>
+                <Nav.Link href="/Movies">Movies</Nav.Link>
+              </Col>
+              <Col>
+                <Nav.Link href="/Series">Series</Nav.Link>
+              </Col>
+              <NavDropdown className='UserSettings' title="User" id="basic-nav-dropdown">
+                <NavDropdown.Item href="Settings">Settings</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </Row>
 
-// const navigator = navigator 
-// const userData = userData 
-// const userout = userout
-// const Navigator = Navigator
-// const useNavigator = useNavigator
-
-
-
-const Header = () => {
-
-    const navigate = useNavigate();
-    // const userReduxCredentials = useSelector(userData);
-    // const dispatch = useDispatch();
-
-    const logout = () => {
-        // dispatch(userout({ credentials: {} }))
-        return Navigate("./Home");
-    }
-
-    // if (userReduxCredentials?.credentials?.token !== undefined) {
-
-    // return (
-    //     <div className="headerDesign">
-    //         <div>
-    //             <div id="headerWord" className="linkPelis" onClick={() => navigate("/movies")}>Movies</div>
-    //         </div>
-    //         <div>
-    //             <div id="headerWord" className="linkSeries" onClick={() => navigate("/series")}>Series</div>
-    //         </div>
-    //         <div>
-    //             <div id="headerWord" className="linkSeries" onClick={() => navigate("/logout")}>Logout</div>
-    //         </div>
-    //     </div>
-    // )
-    // } else {
-    return (
-        <div className="headerDesign">
-            <div>
-                <div className="headerWord" onClick={() => navigate("/")}>Home</div>
-            </div>
-            <div>
-                <div className="headerWord" onClick={() => navigate("/movies")}>Movies</div>
-            </div>
-            <div>
-                <div className="headerWord" onClick={() => navigate("/series")}>Series</div>
-            </div>
-            <div>
-                <div className="headerWord" onClick={() => navigate("/login")}>Login</div>
-            </div>
-            <div>
-                <div className="headerWord" onClick={() => navigate("/register")}>Register</div>
-            </div>
-            <div>
-                <div className="headerWord" onClick={() => navigate("/orders")}>Carrito</div>
-            </div>
-
-        </div>
-
-
-
-    )
+  );
 }
 
 
