@@ -131,6 +131,9 @@ const RegisterScreen = () => {
                 </Button>
             </Form.Group>
         </Form>
+
+
+
     )
 }
 
