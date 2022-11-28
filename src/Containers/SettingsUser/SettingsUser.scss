@@ -1,7 +1,10 @@
-
-.ContainerGeneral {
-    width: 100vw;
+.register-form{
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    flex-direction: column;
+    // border: 1px solid black;
+    padding: 40px,40px,10px,40px;
+  }
+  .principal{
+    height: 90vh;
+    width: 100vw;
+  }

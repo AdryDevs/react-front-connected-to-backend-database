@@ -1,65 +1,169 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
 import "./SettingsUser.scss"
+import React from 'react';
+import { Button, Form, Input,DatePicker, Col, Row } from 'antd';
+const SettingsUser = () =>{
+    const onFinish = (values) => {
+        console.log('Success:', values);
+      };
+      const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+      };
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+    return (
+        <div className="principal">
+<br />
+<Row>
+    <Col xs={1} sm={2} md={6} lg={7}></Col>
+    <Col  xs={22} sm={20} md={12} lg={10}>
+    <Form className="register-form"
+      name="basic"
+      layout="vertical"
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+      autoComplete="off"
+    >
+         <Form.Item
+        label="Username"
+        name="username"
+        hasFeedback
+        rules={[
+          {
+            required: true,
+            message: 'Please input your username!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+         <Form.Item
+        label=" New Username"
+        name=" new username"
+        hasFeedback
+        rules={[
+          {
+            required: true,
+            message: 'Please input your username!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+ <Form.Item
+        label="Email"
+        name="email"
+        hasFeedback
+        rules={[
+          {
+            required: true,
+            message: 'Please input your email!',
+          },
+          {
+            type: 'email',
+            message: 'The input is not valid E-mail!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+ <Form.Item
+        label="New Email"
+        name="new email"
+        hasFeedback
+        rules={[
+          {
+            required: true,
+            message: 'Please input your email!',
+          },
+          {
+            type: 'email',
+            message: 'The input is not valid E-mail!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
 
+      <Form.Item
+        label="Date of Birth"
+        name="birthdate"
+        hasFeedback
+        rules={[
+          {
+            required: true,
+            message: 'Please input your username!',
+          },
+        ]}
+      >
+        <DatePicker/>
+      </Form.Item>
 
-function SettingsUser() {
-  return (
+      <Form.Item
+        label="Password"
+        name="password"
+        hasFeedback
+        rules={[
+          {
+            required: true,
+            message: 'Please input your password!',
+          },
+            {
+              pattern: /[?=.*[0-9]]*/,
+              message: "Password must contain a number!"
+            },
+            {
+              pattern: /[?=.*[a-z]]*/,
+              message: "Password must contain at least 1 lower case!"
+            },
+            {
+              pattern: /[?=.*[A-Z]]*/,
+              message: "Password must contain at least 1 upper case!"
+            },
+            {
+              pattern: /[[a-zA-Z0-9]{8,}]*/,
+              message: "Password must contain at least 8 characters!"
+            },
+            
+        ]}
+      >
+        <Input.Password />
+      </Form.Item>
 
-    <div className='ContainerGeneral'>
-      <Row>
-       <Col>
-    <Form>
-      <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label>Nombre</Form.Label>
-        <Form.Control type="text" placeholder="Carlos y Adry" />
-        <Form.Text className="text-muted">
-          Escriba aquí su nombre
-        </Form.Text>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Date</Form.Label>
-        <Form.Control type="Date" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
+      <Form.Item
+        label="Repeat Password"
+        name="password2"
+        hasFeedback
+        rules={[
+          {
+            required: true,
+            message: 'Please repeat your password!',
+          },
+          ({ getFieldValue }) => ({
+            validator(_, value) {
+              if (!value || getFieldValue('password') === value) {
+                return Promise.resolve();
+              }
+              return Promise.reject(new Error('The two passwords that you entered do not match!'));
+            },
+          }),
+        ]}
+      >
+        <Input.Password />
+      </Form.Item>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Repite your Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
+      <Form.Item>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
     </Form>
     </Col>
-    </Row>
+
+    <Col xs={1} sm={2} md={6} lg={7}></Col>
+
+</Row>
     </div>
   );
 }
-
-
 export default SettingsUser;
+
+
