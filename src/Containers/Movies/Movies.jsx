@@ -27,9 +27,13 @@ const Movies = () => {
       <Row>
         <Col>
           <div>
-            {movies.map((movie) => (
-              <MovieBox key={movie.id} movie={movie} />
-            ))}
+            {movies.map((movie) => {
+
+              return (
+
+                <MovieBox key={movie.id} movie={movie} />
+              )
+              })}
           </div>
         </Col>
       </Row>
