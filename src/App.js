@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -15,7 +16,7 @@ import Home from './Containers/Home/Home';
 import Header from './Components/Header/Header';
 import Login from "./Containers/Login/Login";
 import Register from "./Containers/Register/Register";
-import Settings from "./Containers/SettingsUser/SettingsUser.jsx"
+import Settings from "./Containers/SettingsContainers/SettingsContainer"
 
 function App() {
   let [pageNumber,setPageNumber]=useState(1);
