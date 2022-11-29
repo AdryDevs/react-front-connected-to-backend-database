@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Row } from 'react-bootstrap';
 import './SettingsUser.scss'
+
 
 const SettingsUser = () => {
     const [form, setForm] = useState({});
@@ -61,7 +62,7 @@ const SettingsUser = () => {
     return (
         <Form className='Principal'>
             <Form.Group controlId='username'>
-                <Form.Label>Username</Form.Label>
+                <Form.Label className='words'>Username</Form.Label>
                 <Form.Control
                     placeholder='Enter username'
                     value={form.username}
@@ -75,7 +76,7 @@ const SettingsUser = () => {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='email'>
-                <Form.Label>Email</Form.Label>
+                <Form.Label className='words'>Email</Form.Label>
                 <Form.Control
                     type='email'
                     placeholder='Enter email'
@@ -88,28 +89,15 @@ const SettingsUser = () => {
                     {errors.email}
                 </Form.Control.Feedback>
             </Form.Group>
-            {/* <Form.Group controlId='dob'>
-                <Form.Label>Date of Birth</Form.Label>
-                <Form.Control
-                    type='date'
-                    placeholder='Enter date of birth'
-                    value={form.dob}
-                    onChange={(e) => setField('dob', e.target.value)}
-                    isInvalid={!!errors.dob}
-                >
-                </Form.Control>
-                <Form.Control.Feedback type='invalid'>
-                    {errors.dob}
-                </Form.Control.Feedback>
-            </Form.Group> */}
             <Form.Group controlId=' password'>
-                <Form.Label>Old Password</Form.Label>
+                <Form.Label className='words'>Old Password</Form.Label>
                 <Form.Control
                     type='password'
                     placeholder='Enter your password'
                     value={form.password}
                     onChange={(e) => setField('password', e.target.value)}
                     isInvalid={!!errors.password}
+                    
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -117,7 +105,7 @@ const SettingsUser = () => {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='password'>
-                <Form.Label> New Password</Form.Label>
+                <Form.Label className='words'> New Password</Form.Label>
                 <Form.Control
                     type='password'
                     placeholder='Enter your password'
@@ -131,7 +119,7 @@ const SettingsUser = () => {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='password2'>
-                <Form.Label>Repeat New Password</Form.Label>
+                <Form.Label className='words'>Repeat New Password</Form.Label>
                 <Form.Control
                     type='password'
                     placeholder='Repeat your password'
