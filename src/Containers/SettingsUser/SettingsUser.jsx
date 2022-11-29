@@ -1,169 +1,141 @@
-import "./SettingsUser.scss"
-import React from 'react';
-import { Button, Form, Input,DatePicker, Col, Row } from 'antd';
-const SettingsUser = () =>{
-    const onFinish = (values) => {
-        console.log('Success:', values);
-      };
-      const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
+
+
+import React, { useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
+import './SettingsUser.scss'
+
+const SettingsUser = () => {
+    const [form, setForm] = useState({});
+    const [errors, setErrors] = useState({});
+    const setField = (field, value) => {
+        setForm({
+            ...form,
+            [field]: value
+        })
+        if (!!errors[field])
+            setErrors({
+                ...errors,
+                [field]: null
+            })
+    }
+
+    const validateForm = () => {
+        const { username, email, dob, password, password2 } = form;
+        const newErrors = {};
+        if (!username || username === 'Enter username') newErrors.username = 'Please enter a username'
+        if (!email || email === 'Enter email') newErrors.email = 'Please enter an email'
+        if (!dob || dob === '') newErrors.dob = 'Please enter your date of birth'
+        if (!password || password === 'Enter your password') newErrors.password = 'Please enter a password'
+        else {
+            if (!/[?=.*[0-9]]*/.test(password)) newErrors.password = 'Password must contain a number'
+            if (!/[?=.*[a-z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 lower case'
+            console.log(newErrors)
+            if (!/[?=.*[A-Z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 upper case'
+            if (!/[[a-zA-Z0-9]{8,}]*/.test(password)) newErrors.password = 'Password must contain at least 8 characters'
+        }
+
+        if (!password2 || password2 === 'Repeat your password') newErrors.password2 = 'Please repeat your password'
+        else if (password2 !== password) newErrors.password2 = 'The passwords do not match'
+
+        return newErrors;
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const formErrors = validateForm();
+        if (Object.keys(formErrors).length > 0) {
+            setErrors(formErrors);
+        } else {
+            console.log("submited form")
+        }
+
+        console.log(form);
+    }
 
     return (
-        <div className="principal">
-<br />
-<Row>
-    <Col xs={1} sm={2} md={6} lg={7}></Col>
-    <Col  xs={22} sm={20} md={12} lg={10}>
-    <Form className="register-form"
-      name="basic"
-      layout="vertical"
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="off"
-    >
-         <Form.Item
-        label="Username"
-        name="username"
-        hasFeedback
-        rules={[
-          {
-            required: true,
-            message: 'Please input your username!',
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-         <Form.Item
-        label=" New Username"
-        name=" new username"
-        hasFeedback
-        rules={[
-          {
-            required: true,
-            message: 'Please input your username!',
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
- <Form.Item
-        label="Email"
-        name="email"
-        hasFeedback
-        rules={[
-          {
-            required: true,
-            message: 'Please input your email!',
-          },
-          {
-            type: 'email',
-            message: 'The input is not valid E-mail!',
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
- <Form.Item
-        label="New Email"
-        name="new email"
-        hasFeedback
-        rules={[
-          {
-            required: true,
-            message: 'Please input your email!',
-          },
-          {
-            type: 'email',
-            message: 'The input is not valid E-mail!',
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
+        <Form>
+            <Form.Group controlId='username'>
+                <Form.Label>Username</Form.Label>
+                <Form.Control
+                    placeholder='Enter username'
+                    value={form.username}
+                    onChange={(e) => setField('username', e.target.value)}
+                    isInvalid={!!errors.username}
+                >
+                </Form.Control>
+                <Form.Control.Feedback type='invalid'>
+                    {errors.username}
 
-      <Form.Item
-        label="Date of Birth"
-        name="birthdate"
-        hasFeedback
-        rules={[
-          {
-            required: true,
-            message: 'Please input your username!',
-          },
-        ]}
-      >
-        <DatePicker/>
-      </Form.Item>
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId='email'>
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                    type='email'
+                    placeholder='Enter email'
+                    value={form.email}
+                    onChange={(e) => setField('email', e.target.value)}
+                    isInvalid={!!errors.email}
+                >
+                </Form.Control>
+                <Form.Control.Feedback type='invalid'>
+                    {errors.email}
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId='dob'>
+                <Form.Label>Date of Birth</Form.Label>
+                <Form.Control
+                    type='date'
+                    placeholder='Enter date of birth'
+                    value={form.dob}
+                    onChange={(e) => setField('dob', e.target.value)}
+                    isInvalid={!!errors.dob}
+                >
+                </Form.Control>
+                <Form.Control.Feedback type='invalid'>
+                    {errors.dob}
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId='password'>
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                    type='password'
+                    placeholder='Enter your password'
+                    value={form.password}
+                    onChange={(e) => setField('password', e.target.value)}
+                    isInvalid={!!errors.password}
+                >
+                </Form.Control>
+                <Form.Control.Feedback type='invalid'>
+                    {errors.password}
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId='password2'>
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                    type='password'
+                    placeholder='Repeat your password'
+                    value={form.password2}
+                    onChange={(e) => setField('password2', e.target.value)}
+                    isInvalid={!!errors.password2}
+                >
+                </Form.Control>
+                <Form.Control.Feedback type='invalid'>
+                    {errors.password2}
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId='submit'>
+                <Button type='submit'
+                    onClick={handleSubmit} >
+                    Submit
+                </Button>
+            </Form.Group>
+        </Form>
 
-      <Form.Item
-        label="Password"
-        name="password"
-        hasFeedback
-        rules={[
-          {
-            required: true,
-            message: 'Please input your password!',
-          },
-            {
-              pattern: /[?=.*[0-9]]*/,
-              message: "Password must contain a number!"
-            },
-            {
-              pattern: /[?=.*[a-z]]*/,
-              message: "Password must contain at least 1 lower case!"
-            },
-            {
-              pattern: /[?=.*[A-Z]]*/,
-              message: "Password must contain at least 1 upper case!"
-            },
-            {
-              pattern: /[[a-zA-Z0-9]{8,}]*/,
-              message: "Password must contain at least 8 characters!"
-            },
-            
-        ]}
-      >
-        <Input.Password />
-      </Form.Item>
 
-      <Form.Item
-        label="Repeat Password"
-        name="password2"
-        hasFeedback
-        rules={[
-          {
-            required: true,
-            message: 'Please repeat your password!',
-          },
-          ({ getFieldValue }) => ({
-            validator(_, value) {
-              if (!value || getFieldValue('password') === value) {
-                return Promise.resolve();
-              }
-              return Promise.reject(new Error('The two passwords that you entered do not match!'));
-            },
-          }),
-        ]}
-      >
-        <Input.Password />
-      </Form.Item>
 
-      <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
-    </Form>
-    </Col>
-
-    <Col xs={1} sm={2} md={6} lg={7}></Col>
-
-</Row>
-    </div>
-  );
+    )
 }
+
 export default SettingsUser;
-
-
