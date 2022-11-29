@@ -1,13 +1,12 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
-
+import { Card } from 'antd';
 const API_IMG= "https://image.tmdb.org/t/p/w500/";
 
 const MovieBox = ({movie}) => {
     return (
-        <Card style={{ width: '16rem' }}>
-            <Card.Img variant="top" src={API_IMG + movie.poster_path} />
-        </Card>
+        <Card hoverable style={{width: 240,}}
+        cover={<img alt="example" src={API_IMG + movie.poster_path} />}>
+      </Card>
     );
 };
 
