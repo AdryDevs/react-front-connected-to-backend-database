@@ -60,7 +60,7 @@ const SettingsUser = () => {
     }
 
     return (
-        <Form className='Principal'>
+        <Form className='Principal1'>
             <Form.Group controlId='username'>
                 <Form.Label className='words'>Username</Form.Label>
                 <Form.Control
@@ -68,6 +68,7 @@ const SettingsUser = () => {
                     value={form.username}
                     onChange={(e) => setField('username', e.target.value)}
                     isInvalid={!!errors.username}
+                    className= 'Edit'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -75,7 +76,7 @@ const SettingsUser = () => {
 
                 </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group controlId='email'>
+            <Form.Group  controlId='email'>
                 <Form.Label className='words'>Email</Form.Label>
                 <Form.Control
                     type='email'
@@ -83,6 +84,7 @@ const SettingsUser = () => {
                     value={form.email}
                     onChange={(e) => setField('email', e.target.value)}
                     isInvalid={!!errors.email}
+                    className= 'Edit'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -97,6 +99,7 @@ const SettingsUser = () => {
                     value={form.password}
                     onChange={(e) => setField('password', e.target.value)}
                     isInvalid={!!errors.password}
+                    className= 'Edit'
                     
                 >
                 </Form.Control>
@@ -112,6 +115,7 @@ const SettingsUser = () => {
                     value={form.password2}
                     onChange={(e) => setField('password', e.target.value)}
                     isInvalid={!!errors.password2}
+                    className= 'Edit'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -126,15 +130,17 @@ const SettingsUser = () => {
                     value={form.password3}
                     onChange={(e) => setField('password2', e.target.value)}
                     isInvalid={!!errors.password3}
+                    className= 'Edit'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
                     {errors.password3}
                 </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group controlId='submit'>
+            <Form.Group className='CBoton' controlId='submit'>
                 <Button type='submit'
-                    onClick={handleSubmit} >
+                    onClick={handleSubmit}
+                    className='Boton' >
                     Submit
                 </Button>
             </Form.Group>
