@@ -42,7 +42,6 @@ const RegisterContainer = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
         const formErrors = validateForm();
         if (Object.keys(formErrors).length > 0) {
             setErrors(formErrors);
