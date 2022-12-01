@@ -2,6 +2,8 @@
     background-color: black;
     height: 73vh;
     margin-top: 70px;
+    border-radius: 50%;
+
   }
   
   .words{
@@ -15,4 +17,45 @@
     background-color: black;
     border-radius: 35px;
     border: solid 1px aqua;
+  }
+  .Boton{
+    background-color: black;
+    border-radius: 35px;
+    margin: 2%;
+    cursor: pointer;
+    position: relative;
+  }
+  Boton::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color:linear-gradient(
+      45deg,
+      red,blue,deeppink,rgb(77, 1, 107)
+      red,blue,deeppink,rgb(77, 1, 107));
+      background-size: 800%;
+      border-radius: 10px;
+      filter: blur(8px);
+      animation: glowing 20s linear infinite;
+  }
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .CBoton{
+  display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }

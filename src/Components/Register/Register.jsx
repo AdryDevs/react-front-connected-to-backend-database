@@ -129,7 +129,7 @@ const RegisterScreen = () => {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='submit'>
-                <Button type='submit'
+                <Button className='Boton' type='submit'
                     onClick={handleSubmit} >
                     Submit
                 </Button>
