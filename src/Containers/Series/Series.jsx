@@ -17,7 +17,7 @@ const Series = () => {
         .then((res) => res.json())
         .then(data => {
           console.log(data);
-          setSeries(data.results);
+          setSeries(data);
         })
       }, [])
     

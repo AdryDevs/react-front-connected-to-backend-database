@@ -18,11 +18,11 @@ const Movies = () => {
       .then((res) => res.json())
       .then(data => {
         console.log(data);
-        setMovies(data.results);
+        setMovies(data);
       })
   }, [])
 
-  console.log(movies);
+  
   
 
   return (
