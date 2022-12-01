@@ -7,7 +7,7 @@ import MovieBox from '../../Components/MovieBox';
 
 
 
-const API_URL= "https://api.themoviedb.org/3/movie/popular?api_key=7a058400ca0cc2ae0814f1abeef2423d";
+const API_URL= "http://localhost:3002/movies/";
 
 const Movies = () => {
 
@@ -22,6 +22,9 @@ const Movies = () => {
       })
   }, [])
 
+  console.log(movies);
+  
+
   return (
     <Container fluid>
       <Row>
@@ -29,7 +32,7 @@ const Movies = () => {
           <div>
             {movies.map((movie) => {
               return (
-                <MovieBox key={movie.id} movie={movie}  />
+                <MovieBox key={movie.title} movie={movie} />
               )
               })}
           </div>

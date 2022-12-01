@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card } from 'antd';
 
-const MovieBox = ({movie}) => {
+const SerieBox = ({serie}) => {
     return (
         <Card hoverable style={{width: 240,}}
-        cover={<img alt="movie_poster" src={movie.url_img} />}>
+        cover={<img alt="serie_poster" src={serie.url_img} />}>
       </Card>
     );
 };
 
-export default MovieBox;
+export default SerieBox;

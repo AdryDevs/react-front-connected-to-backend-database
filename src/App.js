@@ -15,6 +15,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './Containers/Home/Home';
 import Header from './Components/Header/Header';
 import Movies from "./Containers/Movies/Movies";
+import Series from './Containers/Series/Series';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from "./Containers/LoginContainer/LoginContainer";
 import Register from "./Containers/RegisterContainer/RegisterContainer";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/movies" element={<Movies/>}/>
           <Route path="/register" element={<Register/>}/>
+          <Route path="/series" element={<Series/>}/>
 
         </Routes>
 
