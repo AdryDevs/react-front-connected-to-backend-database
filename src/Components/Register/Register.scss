@@ -1,10 +1,18 @@
-.register-form{
+.Principal1{
+    background-color: black;
+    height: 83vh;
+    margin-top: 70px;
+  }
+  
+  .words{
+    color: blanchedalmond;
     display: flex;
-    flex-direction: column;
-    // border: 1px solid black;
-    padding: 40px,40px,10px,40px;
-}
-.principal{
-    height: 90vh;
-    width: 100vw;
-}
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Edit{
+    background-color: black;
+    border-radius: 35px;
+    border: solid 1px aqua;
+  }
