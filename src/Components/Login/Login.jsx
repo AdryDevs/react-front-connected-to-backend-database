@@ -54,8 +54,8 @@ const handleSubmit = (e) => {
                 >
                 </Form.Control>
             </Form.Group>
-            <Form.Group controlId='submit'>
-                <Button type='submit'
+            <Form.Group className="boxboton" controlId='submit'>
+                <Button type='submit' className="Boton"
                     onClick={handleSubmit} >
                     Submit
                 </Button>
