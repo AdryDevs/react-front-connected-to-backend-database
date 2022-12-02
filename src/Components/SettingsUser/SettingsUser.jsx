@@ -144,7 +144,9 @@ const SettingsUser = () => {
                     Submit
                 </Button>
             </Form.Group>
+            <h3  className='words'>Modifica aqui tu datos</h3>
         </Form>
+   
 
 
 
