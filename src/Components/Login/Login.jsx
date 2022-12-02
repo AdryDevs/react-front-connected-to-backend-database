@@ -60,6 +60,7 @@ const handleSubmit = (e) => {
                     Submit
                 </Button>
             </Form.Group>
+            <p className="textlogin">Logueate aqui</p>
         </Form>
   );
 }
