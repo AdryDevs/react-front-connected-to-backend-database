@@ -31,24 +31,26 @@ const handleSubmit = (e) => {
 }
 
     return (
-<Form>
+<Form  className="containerform">
             <Form.Group controlId='email'>
-                <Form.Label>Username</Form.Label>
+                <Form.Label  className="words">Username</Form.Label>
                 <Form.Control
                     placeholder='Enter username'
                     value={form.username}
                     onChange={(e) => setField('email', e.target.value)}
+                    className="input"
                 >
                 </Form.Control>
             </Form.Group>
 
             <Form.Group controlId='password'>
-                <Form.Label>Password</Form.Label>
+                <Form.Label className="words">Password</Form.Label>
                 <Form.Control
                     type='password'
                     placeholder='Enter your password'
                     value={form.password}
                     onChange={(e) => setField('password', e.target.value)}
+                    className="input"
                 >
                 </Form.Control>
             </Form.Group>

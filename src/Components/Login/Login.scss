@@ -1,19 +1,12 @@
-.container-login{
-    height: 90vh;
-    width: 100vw;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.containerform{
+    background-color: black;
+    height: 30vh;
+    box-shadow: 0 0 5px 5px white;
 }
-.login-form{
-    height: 40vh;
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    // align-content: center;
-    background-color: rgb(68, 215, 200);
-    margin: 0;
-    padding: 0;
-    border:1px solid black;
+.words{
+    color: wheat;
+}
+.input{
+    background-color: black;
+    box-shadow: 0 0 1px 1px white;
 }
