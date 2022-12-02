@@ -5,8 +5,12 @@
 }
 .words{
     color: wheat;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
 }
 .input{
     background-color: black;
-    box-shadow: 0 0 1px 1px white;
+    border: none;
+    cursor: pointer;
 }
