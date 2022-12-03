@@ -1,13 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Movies.scss";
+import { Container } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
+import MovieBox from '../../Components/MovieBox';
 
+
+
+const API_URL= "http://localhost:3002/movies/";
 
 const Movies = () => {
+
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then(data => {
+        console.log(data);
+        setMovies(data);
+      })
+  }, [])
+
+  
+  
+
   return (
-    <div className='moviesDesign'>
-      
-    </div>
-  )
+    <Container fluid>
+      <Row>
+        <Col>
+          <div>
+            {movies.map((movie) => {
+              return (
+                <MovieBox key={movie.title} movie={movie} />
+              )
+              })}
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  );
 }
 
 
