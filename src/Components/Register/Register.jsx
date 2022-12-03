@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import './Register.scss';
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
+import { useUserToggleContext } from "../../UserProvider";
 
 const RegisterContainer = () => {
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
+    const navigate = useNavigate();
+    const changeLogin=useUserToggleContext();
+
     const setField = (field, value) => {
         setForm({
             ...form,
@@ -47,19 +51,26 @@ const RegisterContainer = () => {
             setErrors(formErrors);
         } else {
             console.log("submited form")
+            e.preventDefault()
+             axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/register",form)
+            .then(response=>{
+              console.log(response);
+              if (response) {
+                console.log("Intentando login");
+                const body ={
+                    email:form.email,
+                    password:form.password
+                }
+                axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/login", body)
+                .then(response => {
+                        localStorage.setItem('jwt', JSON.stringify(response.data.jwt));
+                        changeLogin(response.data.username,response.data.admin);
+                        navigate("/");
+                });
+            }
+            });
+
         }
-
-        console.log(form);
-
-
-        let resp="";
-        e.preventDefault()
-        console.log(form);
-         axios.post("http://localhost:3002/auth/register",form)
-        .then(response=>{
-          console.log(response);
-          resp=response;
-        });
     }
 
     return (

@@ -18,9 +18,6 @@ const Login = () => {
     const handleSubmit = (e) => {
         let resp = "";
         e.preventDefault()
-        // console.log(form);
-        // localStorage.setItem('jwt', JSON.stringify("fdkjvndkfjnvkjfnvdk"));
-        // navigate("/");
         axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/login", form)
             .then(response => {
                 console.log(response);
