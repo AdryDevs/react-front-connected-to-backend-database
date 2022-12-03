@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import './Register.scss'
+import './Register.scss';
+import axios from "axios";
 
-const RegisterScreen = () => {
+
+const RegisterContainer = () => {
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
     const setField = (field, value) => {
@@ -23,7 +25,7 @@ const RegisterScreen = () => {
         if (!username || username === 'Enter username') newErrors.username = 'Please enter a username'
         if (!email || email === 'Enter email') newErrors.email = 'Please enter an email'
         if (!dob || dob === '') newErrors.dob = 'Please enter your date of birth'
-        if (!password || password === 'Enter your password') newErrors.password = 'Please enter a password'
+        if (!password || password === 'Enter your password') newErrors.password= 'Please enter a password'
         else {
             if (!/[?=.*[0-9]]*/.test(password)) newErrors.password = 'Password must contain a number'
             if (!/[?=.*[a-z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 lower case'
@@ -49,6 +51,16 @@ const RegisterScreen = () => {
         }
 
         console.log(form);
+
+
+        let resp="";
+        e.preventDefault()
+        console.log(form);
+         axios.post("http://localhost:3002/auth/register",form)
+        .then(response=>{
+          console.log(response);
+          resp=response;
+        });
     }
 
     return (
@@ -95,8 +107,8 @@ const RegisterScreen = () => {
                     {errors.dob}
                 </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group controlId='password'>
-                <Form.Label>Password</Form.Label>
+            <Form.Label>Password</Form.Label>
+            <Form.Group controlId='password' className='password'>
                 <Form.Control
                     type='password'
                     placeholder='Enter your password'
@@ -106,7 +118,8 @@ const RegisterScreen = () => {
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
-                    {errors.password}
+                    {errors.password};
+
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='password2'>
@@ -130,10 +143,7 @@ const RegisterScreen = () => {
                 </Button>
             </Form.Group>
         </Form>
-
-
-
     )
 }
 
-export default RegisterScreen;
+export default RegisterContainer;
