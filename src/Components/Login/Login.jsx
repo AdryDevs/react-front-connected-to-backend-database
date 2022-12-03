@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { useUserToggleContext } from "../../UserProvider";
 const Login = () => {
     const navigate = useNavigate();
     const [form, setForm] = useState({});
@@ -13,19 +13,21 @@ const Login = () => {
             [field]: value
         })
     }
+    const changeLogin=useUserToggleContext();
 
     const handleSubmit = (e) => {
         let resp = "";
         e.preventDefault()
-        console.log(form);
+        // console.log(form);
         // localStorage.setItem('jwt', JSON.stringify("fdkjvndkfjnvkjfnvdk"));
         // navigate("/");
-        axios.post("http://localhost:3002/auth/login", form)
+        axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/login", form)
             .then(response => {
                 console.log(response);
                 resp = response;
                 if (resp !== "") {
                     localStorage.setItem('jwt', JSON.stringify(resp.data.jwt));
+                    changeLogin(resp.data.username,resp.data.admin);
                     navigate("/");
                 }
                 else {

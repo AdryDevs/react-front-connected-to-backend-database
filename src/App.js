@@ -17,28 +17,13 @@ import Header from './Components/Header/Header';
 import Login from "./Containers/LoginContainer/LoginContainer";
 import Register from "./Containers/RegisterContainer/RegisterContainer";
 import Movies from "./Containers/Movies/Movies"
+import { UserProvider } from './UserProvider';
 
 function App() {
-  let [pageNumber,setPageNumber]=useState(1);
-  let [fetchedData,updateFetchData] = useState([]);
-  
 
-  //Info y results son parte del JSON que devuelve la api de rick y morty
-  let {info,results}=fetchedData;
-
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
-  console.log(results);
-
-  useEffect(()=>{
-    //IIFE
-    (async function(){
-      let data= await fetch(api).then(res=>res.json())
-      updateFetchData(data);
-    })()
-
-  },[api])
-  
   return (
+
+    <UserProvider>
     <Container fluid className="App">
       <BrowserRouter>
         <Header/>
@@ -50,6 +35,7 @@ function App() {
         </Routes>
       </BrowserRouter>     
     </Container>
+    </UserProvider>
   );
 
   
