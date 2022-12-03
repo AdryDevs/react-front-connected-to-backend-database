@@ -3,10 +3,8 @@
 .Principal1{
   background-color: black;
   opacity: .8;
-  height: 60vh;
-  width: 40vw;
   margin-top: 70px;
-  border: solid;
+
 
 
 }
@@ -20,7 +18,8 @@
 
 .Edit{
   background-color: black;
-border: none;
+border-radius: 35px;
+border: solid 1px aqua;
 cursor: pointer;
 }
 
