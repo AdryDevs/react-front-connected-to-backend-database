@@ -18,6 +18,8 @@ const Login = () => {
         let resp = "";
         e.preventDefault()
         console.log(form);
+        // localStorage.setItem('jwt', JSON.stringify("fdkjvndkfjnvkjfnvdk"));
+        // navigate("/");
         axios.post("http://localhost:3002/auth/login", form)
             .then(response => {
                 console.log(response);
@@ -25,7 +27,6 @@ const Login = () => {
                 if (resp !== "") {
                     localStorage.setItem('jwt', JSON.stringify(resp.data.jwt));
                     navigate("/");
-                    this.setState();
                 }
                 else {
                     console.log("No se ha guardado el token");

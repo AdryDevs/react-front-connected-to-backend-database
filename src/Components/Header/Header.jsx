@@ -4,26 +4,33 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import NavLink from 'react-bootstrap/esm/NavLink';
 import { Row, Col,Button } from 'react-bootstrap';
+import {useEffect } from 'react'
 import './Header.scss'
+import { useJwt, decodeToken } from "react-jwt";
 
+const token=localStorage.getItem('jwt');
+let a=0;
 function Header() {
   //HARDCODEAR JWT
   // let jwt="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJjcmVhdGVkIjoxNjY5ODMyOTk0NDEwLCJpYXQiOjE2Njk4MzI5OTR9.WG6ZwhsqmLdEmxA_eK6RY3L5Gi7lKrcOKjGUCEn5WSs";
   // localStorage.setItem('jwt', JSON.stringify(jwt));
-
+  let {decodedToken} = useJwt(token);
+  console.log(decodedToken)
+  if (decodedToken === null) {
+    decodedToken = { name: "" };
+  }
   
   function logOutHandler(){
-    localStorage.setItem('jwt',"");
+    localStorage.removeItem("jwt")
   }
 
-  function prueba(){
-    let jwt="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJjcmVhdGVkIjoxNjY5ODMyOTk0NDEwLCJpYXQiOjE2Njk4MzI5OTR9.WG6ZwhsqmLdEmxA_eK6RY3L5Gi7lKrcOKjGUCEn5WSs";
-    localStorage.setItem('jwt', JSON.stringify(jwt));
-    this.setState('jwt',JSON.stringify(jwt));
-  }
+  useEffect(() => {
+    console.log("FUUUUUUUUUCK");
+    a+=1;
+  });
 
 console.log(localStorage.getItem('jwt'));
-  if(localStorage.getItem('jwt')===""||localStorage.getItem('jwt')===null){
+  if(!token){
     return (
       <Row>
         <Navbar className='Navbar' expand="sm">
@@ -39,8 +46,7 @@ console.log(localStorage.getItem('jwt'));
                   <Nav.Link href="/Series">Series</Nav.Link>
                 </Col>
                 <Col>
-                  {/* <Nav.Link href="/Login">Login</Nav.Link> */}
-                  <Button onClick={prueba}>Login</Button>
+                  <Nav.Link href="/Login">Login</Nav.Link>
                 </Col>
                 <Col>
                   <Nav.Link href="/Register">Register</Nav.Link>
@@ -68,7 +74,7 @@ console.log(localStorage.getItem('jwt'));
                   <Nav.Link href="/Series">Series</Nav.Link>
                 </Col>
                 <Col>
-                  <Button href="/" onClick={logOutHandler}>Log Out</Button>
+                  <Nav.Link href="/" onClick={logOutHandler}>Log Out</Nav.Link>
                 </Col>
                 <NavDropdown className='UserSettings' title="User" id="basic-nav-dropdown">
                   <NavDropdown.Item href="Settings">User Settings</NavDropdown.Item>
