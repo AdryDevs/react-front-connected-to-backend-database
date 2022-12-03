@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import Home from '../../Containers/Home/Home';
 import './Register.scss'
 
 const RegisterScreen = () => {
@@ -134,7 +135,9 @@ const RegisterScreen = () => {
                     Submit
                 </Button>
             </Form.Group>
+            <h3 className='textregister'>Introduzca sus datos para registrarse</h3>
         </Form>
+        
 
 
 

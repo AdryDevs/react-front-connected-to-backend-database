@@ -1,5 +1,6 @@
 .Principal1{
-    background-color: transparent;
+    background-color: black;
+    opacity: .8;
     margin-top: 70px;
 
   }
@@ -55,5 +56,11 @@
   .CBoton{
   display: flex;
     justify-content: flex-end;
+    align-items: center;
+  }
+  .textregister{
+    color: white;
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
