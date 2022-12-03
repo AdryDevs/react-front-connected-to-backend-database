@@ -40,21 +40,16 @@ function App() {
   return (
     <Container fluid className="App">
       <BrowserRouter>
-
         <Header/>
         <Routes>
-          
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/movies" element={<Movies/>}/>
           <Route path="/register" element={<Register/>}/>
-
         </Routes>
-
       </BrowserRouter>     
-
     </Container>
   );
-}
+} 
 
 export default App;

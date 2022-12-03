@@ -25,6 +25,7 @@ const Login = () => {
                 if (resp !== "") {
                     localStorage.setItem('jwt', JSON.stringify(resp.data.jwt));
                     navigate("/");
+                    this.setState();
                 }
                 else {
                     console.log("No se ha guardado el token");

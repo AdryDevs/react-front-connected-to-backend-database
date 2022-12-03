@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import NavLink from 'react-bootstrap/esm/NavLink';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col,Button } from 'react-bootstrap';
 import './Header.scss'
 
 function Header() {
@@ -11,6 +11,18 @@ function Header() {
   // let jwt="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJjcmVhdGVkIjoxNjY5ODMyOTk0NDEwLCJpYXQiOjE2Njk4MzI5OTR9.WG6ZwhsqmLdEmxA_eK6RY3L5Gi7lKrcOKjGUCEn5WSs";
   // localStorage.setItem('jwt', JSON.stringify(jwt));
 
+  
+  function logOutHandler(){
+    localStorage.setItem('jwt',"");
+  }
+
+  function prueba(){
+    let jwt="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJjcmVhdGVkIjoxNjY5ODMyOTk0NDEwLCJpYXQiOjE2Njk4MzI5OTR9.WG6ZwhsqmLdEmxA_eK6RY3L5Gi7lKrcOKjGUCEn5WSs";
+    localStorage.setItem('jwt', JSON.stringify(jwt));
+    this.setState('jwt',JSON.stringify(jwt));
+  }
+
+console.log(localStorage.getItem('jwt'));
   if(localStorage.getItem('jwt')===""||localStorage.getItem('jwt')===null){
     return (
       <Row>
@@ -27,7 +39,8 @@ function Header() {
                   <Nav.Link href="/Series">Series</Nav.Link>
                 </Col>
                 <Col>
-                  <Nav.Link href="/Login">Login</Nav.Link>
+                  {/* <Nav.Link href="/Login">Login</Nav.Link> */}
+                  <Button onClick={prueba}>Login</Button>
                 </Col>
                 <Col>
                   <Nav.Link href="/Register">Register</Nav.Link>
@@ -55,7 +68,7 @@ function Header() {
                   <Nav.Link href="/Series">Series</Nav.Link>
                 </Col>
                 <Col>
-                  <Nav.Link href="">Log Out</Nav.Link>
+                  <Button href="/" onClick={logOutHandler}>Log Out</Button>
                 </Col>
                 <NavDropdown className='UserSettings' title="User" id="basic-nav-dropdown">
                   <NavDropdown.Item href="Settings">User Settings</NavDropdown.Item>
