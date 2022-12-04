@@ -16,25 +16,15 @@ const Login = () => {
     const changeLogin=useUserToggleContext();
 
     const handleSubmit = (e) => {
-        let resp = "";
         e.preventDefault()
-        // console.log(form);
-        // localStorage.setItem('jwt', JSON.stringify("fdkjvndkfjnvkjfnvdk"));
-        // navigate("/");
         axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/login", form)
             .then(response => {
-                console.log(response);
-                resp = response;
-                if (resp !== "") {
-                    localStorage.setItem('jwt', JSON.stringify(resp.data.jwt));
-                    changeLogin(resp.data.username,resp.data.admin);
+                    localStorage.setItem('jwt', JSON.stringify(response.data.jwt));
+                    localStorage.setItem('username', response.data.username);
+                    localStorage.setItem('isAdmin', response.data.admin);
+                    changeLogin(response.data.username,response.data.admin);
                     navigate("/");
-                }
-                else {
-                    console.log("No se ha guardado el token");
-                }
             });
-
     }
 
     return (
