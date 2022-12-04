@@ -26,13 +26,13 @@ const Movies = () => {
   
 
   return (
-    <Container fluid>
-      <Row>
-        <Col>
-          <div>
+    <Container className='containerprincipal' fluid>
+      <Row  >
+        <Col className='grid'>
+          <div className='containermovie'>
             {movies.map((movie) => {
               return (
-                <MovieBox key={movie.title} movie={movie} />
+                <MovieBox  key={movie.title} movie={movie} />
               )
               })}
           </div>
