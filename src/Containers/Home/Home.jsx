@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function UncontrolledExample() {
+function Home() {
   return (
     <Container className='Fondo' fluid>
       <Row className='Texto Fila'>
@@ -26,43 +26,4 @@ function UncontrolledExample() {
   );
 }
 
-export default UncontrolledExample;
-
-import React from 'react'
-import { Carousel } from 'antd';
-import './Home.scss'
-
-const contentStyle = {
-    margin: 0,
-    height: '90vh',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#000000',
-  };
-
-const Home = () => {
-    const onChange = (currentSlide) => {
-        console.log(currentSlide);
-      };
-      return (
-
-        <Carousel afterChange={onChange}>
-          <div className='homeDesign'>
-            <h3 style={contentStyle}>Picture1</h3>
-          </div>
-          <div>
-            <h3 style={contentStyle}>Picture2</h3>
-          </div>
-          <div>
-            <h3 style={contentStyle}>Picture3</h3>
-          </div>
-          <div>
-            <h3 style={contentStyle}>Picture4</h3>
-          </div>
-        </Carousel>
-
-      );
-    };
-
-export default Home
+export default Home;
