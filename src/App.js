@@ -1,60 +1,49 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Container} from 'react-bootstrap';
 
 
-
-// 
-// import Register from './Components';
-// import Pelis from './Components';
-// import Series from './Components';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 // Import the component
 
 import Home from './Containers/Home/Home';
 import Header from './Components/Header/Header';
-import Login from "./Containers/Login/Login";
-import Register from "./Containers/Register/Register";
+import Movies from "./Containers/Movies/Movies";
+import Series from './Containers/Series/Series';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from "./Containers/LoginContainer/LoginContainer";
+import Register from "./Containers/RegisterContainer/RegisterContainer";
+import { UserProvider } from './UserProvider';
 import Settings from "./Containers/SettingsContainers/SettingsContainer"
 
 function App() {
-  let [pageNumber,setPageNumber]=useState(1);
-  let [fetchedData,updateFetchData] = useState([]);
 
-  //Info y results son parte del JSON que devuelve la api de rick y morty
-  let {info,results}=fetchedData;
-
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
-  console.log(results);
-
-  useEffect(()=>{
-    //IIFE
-    (async function(){
-      let data= await fetch(api).then(res=>res.json())
-      updateFetchData(data);
-    })()
-
-  },[api])
-  
   return (
-    <div className="App">
-      <BrowserRouter>
 
+    <UserProvider>
+    <Container fluid className="App">
+      <BrowserRouter>
         <Header/>
         <Routes>
-          
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/movies" element={<Movies/>}/>
           <Route path="/register" element={<Register/>}/>
-          <Route path="/Settings" element={<Settings/>}/>
+          <Route path="/series" element={<Series/>}/>
+          <Route path="/settings" element={<Settings/>}/>
 
         </Routes>
-
       </BrowserRouter>     
-
-    </div>
+    </Container>
+    </UserProvider>
   );
-}
+
+  
+} 
+
+
+
 
 export default App;
