@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap';
-import { Row } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import MovieBox from '../../Components/MovieBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
@@ -24,11 +22,6 @@ const Movies = () => {
     dispatch(addMovie(selectedMovie));
     navigate(`/movies/${selectedMovie.title}`);
 
-  const searchMovie = useSelector(movieData);
-  const search = searchMovie.title;
-  const text = searchMovie.text;
-  
-
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
@@ -44,27 +37,18 @@ const Movies = () => {
     dispatch(setMovies({ ...movie, details: movie}));
     navigate(`/movies/${movie.title}`);
   }
-  
-  const handleSearch = (e) => {
-    e.preventDefault();
-    dispatch(setMovies({ ...search, details: search}));
-    navigate(`/movies/${search.title}`);
-  }
-
-  const handleText = (e) => {
-    dispatch(setMovies({ ...text, details: text}));
-    navigate(`/movies/${text.title}`);
-  }
-
 
   return (
     <Container fluid>
       <Row>
-        <Col>
+        <Col className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
           <div>
             {movies.map((movie) => {
               return (
-                <MovieBox key={movie.title} movie={movie} handleMovieClick={handleMovieClick} />
+                <MovieBox 
+                key={movie.title} 
+                movie={movie} 
+                handleMovieClick={handleMovieClick} />
               )
               })}
           </div>
