@@ -20,6 +20,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from "./Containers/LoginContainer/LoginContainer";
 import Register from "./Containers/RegisterContainer/RegisterContainer";
 import { UserProvider } from './UserProvider';
+import Settings from "./Containers/SettingsContainers/SettingsContainer"
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/movies" element={<Movies/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/series" element={<Series/>}/>
+          <Route path="/Settings" element={<Settings/>}/>
 
         </Routes>
       </BrowserRouter>     
