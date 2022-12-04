@@ -39,16 +39,16 @@ function Header() {
               <Navbar.Collapse  id="basic-navbar-nav">
                 <Nav  className="me-auto">
                   <Col>
-                    <Nav.Link className='words'  href="/Movies">Movies</Nav.Link>
+                    <Nav.Link className='words1'  href="/Movies">Movies</Nav.Link>
                   </Col>
                   <Col>
-                    <Nav.Link className='words' href="/Series">Series</Nav.Link>
+                    <Nav.Link className='words1' href="/Series">Series</Nav.Link>
                   </Col>
                   <Col>
-                    <Nav.Link className='words' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
+                    <Nav.Link className='words1' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
                   </Col>
                   <NavDropdown className='UserSettings' title={username} id="basic-nav-dropdown">
-                    <NavDropdown.Item className='words' href="Settings">Account Settings</NavDropdown.Item>
+                    <NavDropdown.Item className='words1' href="Settings">Account Settings</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">
                       All Orders
                     </NavDropdown.Item>
@@ -72,16 +72,16 @@ function Header() {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                   <Col>
-                    <Nav.Link className='words' href="/Movies">Movies</Nav.Link>
+                    <Nav.Link className='words1' href="/Movies">Movies</Nav.Link>
                   </Col>
                   <Col>
-                    <Nav.Link className='words' href="/Series">Series</Nav.Link>
+                    <Nav.Link className='words1' href="/Series">Series</Nav.Link>
                   </Col>
                   <Col>
-                    <Nav.Link className='words' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
+                    <Nav.Link className='words1' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
                   </Col>
                   <NavDropdown className='UserSettings' title={username} id="basic-nav-dropdown">
-                    <NavDropdown.Item className='words' href="Settings">Account Settings</NavDropdown.Item>
+                    <NavDropdown.Item className='words1' href="Settings">Account Settings</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">
                       Orders
                     </NavDropdown.Item>
@@ -98,21 +98,21 @@ function Header() {
       <Row>
         <Navbar className='Navbar' expand="sm">
           <Container>
-            <Navbar.Brand className='words' href="/">Home</Navbar.Brand>
+            <Navbar.Brand className='words1' href="/">Home</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Col>
-                  <Nav.Link className='words' href="/Movies">Movies</Nav.Link>
+                  <Nav.Link className='words1' href="/Movies">Movies</Nav.Link>
                 </Col>
                 <Col>
-                  <Nav.Link className='words' href="/Series">Series</Nav.Link>
+                  <Nav.Link className='words1' href="/Series">Series</Nav.Link>
                 </Col>
                 <Col>
-                  <Nav.Link className='words' href="/Login">Login</Nav.Link>
+                  <Nav.Link className='words1' href="/Login">Login</Nav.Link>
                 </Col>
                 <Col>
-                  <Nav.Link className='words' href="/Register">Register</Nav.Link>
+                  <Nav.Link className='words1' href="/Register">Register</Nav.Link>
                 </Col>
               </Nav>
             </Navbar.Collapse>
