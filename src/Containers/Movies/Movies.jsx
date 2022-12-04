@@ -27,16 +27,14 @@ const Movies = () => {
 
   return (
     <Container fluid>
-      <Row>
-        <Col>
-          <div>
+      <Row d-flex justify-content-center>
             {movies.map((movie) => {
               return (
+                <Col xs={12} sm={5} md={4} lg={3}>
                 <MovieBox key={movie.title} movie={movie} />
+                </Col>
               )
               })}
-          </div>
-        </Col>
       </Row>
     </Container>
   );
