@@ -6,7 +6,7 @@ import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import SerieBox from '../../Components/SerieBox';
 
-const API_URL= "http://localhost:3002/series/";
+const API_URL= "https://proyectobackendpeliculas-production.up.railway.app/series/";
 
 const Series = () => {
     
