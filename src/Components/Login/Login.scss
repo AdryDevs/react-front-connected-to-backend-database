@@ -1,19 +1,74 @@
-.container-login{
-    height: 90vh;
-    width: 100vw;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-.login-form{
+.containerform {
+    background-color: black;
     height: 40vh;
-    width: 50vw;
+    // width: 20vw;
+    box-shadow: 0 0 5px 5px white;
+}
+
+.words {
+    color: wheat;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    // align-content: center;
-    background-color: rgb(68, 215, 200);
-    margin: 0;
-    padding: 0;
-    border:1px solid black;
+    margin: 10px;
+}
+
+.input {
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.Boton {
+    background-color: black;
+    border-radius: 35px;
+    margin: 2%;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.boxboton {
+    display: flex;
+    justify-content: flex-end;
+
+}
+.textlogin{
+    margin-left: 10px;
+    color: white;
+}
+
+Boton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: linear-gradient(45deg,
+            red, blue, deeppink, rgb(77, 1, 107) red, blue, deeppink, rgb(77, 1, 107));
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.CBoton {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
