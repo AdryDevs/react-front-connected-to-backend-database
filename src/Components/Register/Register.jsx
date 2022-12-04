@@ -65,6 +65,8 @@ const RegisterContainer = () => {
                 axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/login", body)
                 .then(response => {
                         localStorage.setItem('jwt', JSON.stringify(response.data.jwt));
+                        localStorage.setItem('username', response.data.username);
+                        localStorage.setItem('isAdmin', response.data.admin);
                         changeLogin(response.data.username,response.data.admin);
                         navigate("/");
                 });

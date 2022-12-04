@@ -30,7 +30,7 @@ const Login = () => {
     return (
 <Form  className="containerform">
             <Form.Group controlId='email'>
-                <Form.Label  className="words">Username</Form.Label>
+                <Form.Label  className="words">Email</Form.Label>
                 <Form.Control
                     placeholder='Enter username'
                     value={form.username}

@@ -24,9 +24,9 @@ function Header() {
 
 
   }
-  console.log("TOKEEEEEEEEN::::" + token);
+  console.log(isAdmin);
   if (token) {
-    if (isAdmin) {
+    if (isAdmin==true) {
       return (
         <Row>
           <Navbar className='Navbar' expand="sm">
