@@ -6,10 +6,6 @@ import {Container} from 'react-bootstrap';
 
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
-// 
-// import Pelis from './Components';
-// import Series from './Components';
-
 // Import the component
 
 import Home from './Containers/Home/Home';
@@ -36,7 +32,7 @@ function App() {
           <Route path="/movies" element={<Movies/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/series" element={<Series/>}/>
-          <Route path="/Settings" element={<Settings/>}/>
+          <Route path="/settings" element={<Settings/>}/>
 
         </Routes>
       </BrowserRouter>     

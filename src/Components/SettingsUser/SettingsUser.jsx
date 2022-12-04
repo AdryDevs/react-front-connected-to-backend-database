@@ -91,22 +91,6 @@ const SettingsUser = () => {
                     {errors.email}
                 </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group controlId=' password'>
-                <Form.Label className='words'>Old Password</Form.Label>
-                <Form.Control
-                    type='password'
-                    placeholder='Enter your password'
-                    value={form.password}
-                    onChange={(e) => setField('password', e.target.value)}
-                    isInvalid={!!errors.password}
-                    className= 'Edit'
-                    
-                >
-                </Form.Control>
-                <Form.Control.Feedback type='invalid'>
-                    {errors.password}
-                </Form.Control.Feedback>
-            </Form.Group>
             <Form.Group controlId='password'>
                 <Form.Label className='words'> New Password</Form.Label>
                 <Form.Control
@@ -144,7 +128,6 @@ const SettingsUser = () => {
                     Submit
                 </Button>
             </Form.Group>
-            <h3  className='words'>Modifica aqui tu datos</h3>
         </Form>
    
 
