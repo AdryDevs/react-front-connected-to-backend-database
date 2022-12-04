@@ -7,6 +7,7 @@ import axios from "axios";
 const SettingsUser = () => {
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
+    // axios.defaults.headers.put['Authorization'] = `Bearer ${localStorage.getItem('jwt').toString()}`;
     const setField = (field, value) => {
         setForm({
             ...form,
@@ -22,19 +23,14 @@ const SettingsUser = () => {
     const validateForm = () => {
         const { username, email, password, password2 } = form;
         const newErrors = {};
-        if (!username || username === 'Enter username') newErrors.username = 'Please enter a username'
-        if (!email || email === 'Enter email') newErrors.email = 'Please enter an email'
-        if (!password || password === 'Enter your password') newErrors.password= 'Please enter a password'
-        else {
-            if (!/[?=.*[0-9]]*/.test(password)) newErrors.password = 'Password must contain a number'
-            if (!/[?=.*[a-z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 lower case'
+        console.log("PAAAAASSSS:::"+password);
+            if (password&&!/[?=.*[0-9]]*/.test(password)) newErrors.password = 'Password must contain a number'
+            if (password&&!/[?=.*[a-z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 lower case'
             console.log(newErrors)
-            if (!/[?=.*[A-Z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 upper case'
-            if (!/[[a-zA-Z0-9]{8,}]*/.test(password)) newErrors.password = 'Password must contain at least 8 characters'
-        }
-
-        if (!password2 || password2 === 'Repeat your password') newErrors.password2 = 'Please repeat your password'
-        else if (password2 !== password) newErrors.password2 = 'The passwords do not match'
+            if (password&&!/[?=.*[A-Z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 upper case'
+            if (password&&!/[[a-zA-Z0-9]{8,}]*/.test(password)) newErrors.password = 'Password must contain at least 8 characters'
+            
+            if (password2&&password2 !== password) newErrors.password2 = 'The passwords do not match'
 
         return newErrors;
     }
@@ -47,7 +43,11 @@ const SettingsUser = () => {
             setErrors(formErrors);
         } else {
             console.log("submited form")
-            axios.post("https://proyectobackendpeliculas-production.up.railway.app/user/update", form)
+            const token=localStorage.getItem("jwt");
+            const config = {
+                headers: { Authorization: `Bearer ${token}` },
+              };
+            axios.put("https://proyectobackendpeliculas-production.up.railway.app/users/update", form,config)
             .then(response => {
                 console.log(response);
             });

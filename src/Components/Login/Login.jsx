@@ -19,7 +19,7 @@ const Login = () => {
         e.preventDefault()
         axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/login", form)
             .then(response => {
-                    localStorage.setItem('jwt', JSON.stringify(response.data.jwt));
+                    localStorage.setItem('jwt', response.data.jwt);
                     localStorage.setItem('username', response.data.username);
                     localStorage.setItem('isAdmin', response.data.admin);
                     changeLogin(response.data.username,response.data.admin);
