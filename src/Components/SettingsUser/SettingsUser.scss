@@ -1,37 +1,10 @@
-// .principal{
-//     background-color: black;
-// }
-// .inputs{
-//     color: aqua;
-//     border-radius: 35px;
-// }
 
-
-
-// .register-form{
-//     display: flex;
-//     flex-direction: column;
-//     // border: 1px solid black;
-//     padding: 40px,40px,10px,40px;
-//   }
-//   .principal{
-//     height: 90vh;
-//     width: 100vw;
-//   }
-
-//   .loquesea{
-//     background-color: rgb(188, 137, 195);
-//     border-radius: 35px;
-
-
-//   }
 
 .Principal1{
-  background-color: transparent;
-  height: 60vh;
-  width: 40vw;
+  background-color: black;
+  opacity: .8;
   margin-top: 70px;
-  border: solid;
+
 
 
 }
@@ -45,7 +18,8 @@
 
 .Edit{
   background-color: black;
-border: none;
+border-radius: 35px;
+border: solid 1px aqua;
 cursor: pointer;
 }
 
