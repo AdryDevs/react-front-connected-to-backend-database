@@ -17,3 +17,31 @@ img {
     height: auto;
     position: absolute;
 }
+
+.Fondo{
+    background-image: url(./img/cintas-online.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Texto{
+    background-color: transparent;
+    height: 87vh;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+}
+.Fila{
+    height: 90vh;
+}
+.divtext{
+    background: black;
+    opacity: .8;
+    height: 70vh;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     color: white;
+}
