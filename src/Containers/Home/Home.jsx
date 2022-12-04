@@ -1,16 +1,30 @@
 import React from 'react'
 import './Home.scss'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+function UncontrolledExample() {
+  return (
+    <Container className='Fondo' fluid>
+      <Row className='Texto Fila'>
 
-const Home = () => {
-      return (
-        <div className="homeDesign">
-          <img alt='logo' className='logo' src='' /> 
-          {/* TODO: add logo */}
-          <img alt='corn' src='https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' />
-        </div>
-      );
-    };
+        <Col> 
+          <div className='divtext' >
+            Are your redy for the beast series in the world?<br />
+            Disfruta de un mundo lleno de<br />
+            posibilidades y
+            aventuras en<br />
+            film FRESAS<br />
 
-export default Home
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  );
+}
+
+export default UncontrolledExample;
+
