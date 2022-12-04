@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Row } from 'react-bootstrap';
 import './SettingsUser.scss'
+import axios from "axios";
 
 
 const SettingsUser = () => {
@@ -19,11 +20,11 @@ const SettingsUser = () => {
     }
 
     const validateForm = () => {
-        const { username, email, dob, password, password2, password3 } = form;
+        const { username, email, password, password2 } = form;
         const newErrors = {};
         if (!username || username === 'Enter username') newErrors.username = 'Please enter a username'
         if (!email || email === 'Enter email') newErrors.email = 'Please enter an email'
-        if (!password || password === 'Enter your password') newErrors.password = 'Please enter a password'
+        if (!password || password === 'Enter your password') newErrors.password= 'Please enter a password'
         else {
             if (!/[?=.*[0-9]]*/.test(password)) newErrors.password = 'Password must contain a number'
             if (!/[?=.*[a-z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 lower case'
@@ -31,17 +32,9 @@ const SettingsUser = () => {
             if (!/[?=.*[A-Z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 upper case'
             if (!/[[a-zA-Z0-9]{8,}]*/.test(password)) newErrors.password = 'Password must contain at least 8 characters'
         }
-        if (!password2 || password2 === 'Enter your password') newErrors.password2 = 'Please enter a password'
-        else {
-            if (!/[?=.*[0-9]]*/.test(password2)) newErrors.password2 = 'Password must contain a number'
-            if (!/[?=.*[a-z]]*/.test(password2)) newErrors.password2 = 'Password must contain at least 1 lower case'
-            console.log(newErrors)
-            if (!/[?=.*[A-Z]]*/.test(password2)) newErrors.password2 = 'Password must contain at least 1 upper case'
-            if (!/[[a-zA-Z0-9]{8,}]*/.test(password2)) newErrors.password2 = 'Password must contain at least 8 characters'
-        }
 
-        if (!password3 || password3 === 'Repeat your password') newErrors.password3 = 'Please repeat your password'
-        else if (password3 !== password2) newErrors.password3 = 'The passwords do not match'
+        if (!password2 || password2 === 'Repeat your password') newErrors.password2 = 'Please repeat your password'
+        else if (password2 !== password) newErrors.password2 = 'The passwords do not match'
 
         return newErrors;
     }
@@ -54,6 +47,10 @@ const SettingsUser = () => {
             setErrors(formErrors);
         } else {
             console.log("submited form")
+            axios.post("https://proyectobackendpeliculas-production.up.railway.app/user/update", form)
+            .then(response => {
+                console.log(response);
+            });
         }
 
         console.log(form);
