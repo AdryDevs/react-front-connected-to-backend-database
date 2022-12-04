@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import Home from '../../Containers/Home/Home';
+import './Register.scss'
 import './Register.scss';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -74,14 +76,15 @@ const RegisterContainer = () => {
     }
 
     return (
-        <Form>
+        <Form className='Principal1'>
             <Form.Group controlId='username'>
-                <Form.Label>Username</Form.Label>
+                <Form.Label className='words'>Username</Form.Label>
                 <Form.Control
                     placeholder='Enter username'
                     value={form.username}
                     onChange={(e) => setField('username', e.target.value)}
                     isInvalid={!!errors.username}
+                    className='Edit'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -90,13 +93,14 @@ const RegisterContainer = () => {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='email'>
-                <Form.Label>Email</Form.Label>
+                <Form.Label className='words'>Email</Form.Label>
                 <Form.Control
                     type='email'
                     placeholder='Enter email'
                     value={form.email}
                     onChange={(e) => setField('email', e.target.value)}
                     isInvalid={!!errors.email}
+                    className='Edit'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -104,13 +108,14 @@ const RegisterContainer = () => {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='dob'>
-                <Form.Label>Date of Birth</Form.Label>
+                <Form.Label className='words'>Date of Birth</Form.Label>
                 <Form.Control
                     type='date'
                     placeholder='Enter date of birth'
                     value={form.dob}
                     onChange={(e) => setField('dob', e.target.value)}
                     isInvalid={!!errors.dob}
+                    className='Edit'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -125,6 +130,7 @@ const RegisterContainer = () => {
                     value={form.password}
                     onChange={(e) => setField('password', e.target.value)}
                     isInvalid={!!errors.password}
+                    className='Edit'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -133,13 +139,14 @@ const RegisterContainer = () => {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='password2'>
-                <Form.Label>Password</Form.Label>
+                <Form.Label className='words'>Password</Form.Label>
                 <Form.Control
                     type='password'
                     placeholder='Repeat your password'
                     value={form.password2}
                     onChange={(e) => setField('password2', e.target.value)}
                     isInvalid={!!errors.password2}
+                    className='Edit'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -147,11 +154,12 @@ const RegisterContainer = () => {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='submit'>
-                <Button type='submit'
+                <Button className='Boton' type='submit'
                     onClick={handleSubmit} >
                     Submit
                 </Button>
             </Form.Group>
+            <h3 className='textregister'>Introduzca sus datos para registrarse</h3>
         </Form>
     )
 }
