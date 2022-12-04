@@ -18,7 +18,11 @@ function Header() {
 
   console.log(user)
   function logOutHandler() {
-    localStorage.removeItem("jwt")
+    localStorage.removeItem("jwt");
+    localStorage.removeItem("username");
+    localStorage.removeItem("isAdmin")
+
+
   }
   console.log("TOKEEEEEEEEN::::" + token);
   if (token) {
