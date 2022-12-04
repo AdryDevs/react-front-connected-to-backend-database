@@ -7,7 +7,7 @@ import MovieBox from '../../Components/MovieBox';
 
 
 
-const API_URL= "http://localhost:3002/movies/";
+const API_URL= "https://proyectobackendpeliculas-production.up.railway.app/movies/";
 
 const Movies = () => {
 

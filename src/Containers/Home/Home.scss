@@ -1,19 +1,34 @@
-.homeDesign {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
-    width: 100%;
-}
-
-img {
-    width: 100%;
-    height: 100%;
-}
 
 .logo {
     width: 20em;
     height: auto;
     position: absolute;
+}
+
+.Fondo{
+    background-image: url(./img/cintas-online.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Texto{
+    background-color: transparent;
+    height: 87vh;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+}
+.Fila{
+    height: 90vh;
+}
+.divtext{
+    background: black;
+    opacity: .8;
+    height: 70vh;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     color: white;
 }
