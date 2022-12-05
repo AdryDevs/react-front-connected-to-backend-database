@@ -12,7 +12,6 @@ const MovieBox = ({movie}) => {
         <Card hoverable style={{width: 240,height: 365}}
         cover={<img alt="movie_poster" src={movie.url_img} />}
         onClick={() => navigate(`/movies/${movie.title}`)}>
-      
         </Card>
     );
 };

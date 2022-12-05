@@ -6,7 +6,7 @@ const LoginContainer = () =>{
     return (
         <Row className='containerlogin'>
             <Col/>
-            <Col xs={10} sm={8} md={6} lg={3}>
+            <Col xs={10} sm={8} md={6} lg={4}>
                 <Login/>
             </Col>
             <Col/>

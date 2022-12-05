@@ -25,16 +25,14 @@ const Series = () => {
     
       return (
      <Container fluid>
-        <Row>
-          <Col>
-             <div>
+        <Row d-flex justify-content-center>
                 {series.map((serie) => {
                   return (
+                  <Col xs={12} sm={5} md={4} lg={3}>
                  <SerieBox key={serie.title} serie={serie} />
+                 </Col>
                   )
                   })}
-             </div>
-          </Col>
         </Row>
      </Container>
       );

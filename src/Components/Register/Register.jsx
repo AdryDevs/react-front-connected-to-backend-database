@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import Home from '../../Containers/Home/Home';
 import './Register.scss'
-import './Register.scss';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useUserToggleContext } from "../../UserProvider";
@@ -66,6 +65,8 @@ const RegisterContainer = () => {
                 axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/login", body)
                 .then(response => {
                         localStorage.setItem('jwt', JSON.stringify(response.data.jwt));
+                        localStorage.setItem('username', response.data.username);
+                        localStorage.setItem('isAdmin', response.data.admin);
                         changeLogin(response.data.username,response.data.admin);
                         navigate("/");
                 });
@@ -84,7 +85,7 @@ const RegisterContainer = () => {
                     value={form.username}
                     onChange={(e) => setField('username', e.target.value)}
                     isInvalid={!!errors.username}
-                    className='Edit'
+                    className='input'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -100,7 +101,7 @@ const RegisterContainer = () => {
                     value={form.email}
                     onChange={(e) => setField('email', e.target.value)}
                     isInvalid={!!errors.email}
-                    className='Edit'
+                    className='input'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -115,7 +116,7 @@ const RegisterContainer = () => {
                     value={form.dob}
                     onChange={(e) => setField('dob', e.target.value)}
                     isInvalid={!!errors.dob}
-                    className='Edit'
+                    className='input'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -130,7 +131,7 @@ const RegisterContainer = () => {
                     value={form.password}
                     onChange={(e) => setField('password', e.target.value)}
                     isInvalid={!!errors.password}
-                    className='Edit'
+                    className='input'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -146,7 +147,7 @@ const RegisterContainer = () => {
                     value={form.password2}
                     onChange={(e) => setField('password2', e.target.value)}
                     isInvalid={!!errors.password2}
-                    className='Edit'
+                    className='input'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
@@ -159,7 +160,6 @@ const RegisterContainer = () => {
                     Submit
                 </Button>
             </Form.Group>
-            <h3 className='textregister'>Introduzca sus datos para registrarse</h3>
         </Form>
     )
 }

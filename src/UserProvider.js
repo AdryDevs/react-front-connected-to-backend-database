@@ -14,7 +14,8 @@ export function useUserToggleContext() {
 export function UserProvider({ children }) {
     const [user, setUser] = useState({
         name: 'User',
-        isAdmin: false
+        isAdmin: false,
+        cliecked:{}
     });
 
     const changeLogin = (name, admin) => {
