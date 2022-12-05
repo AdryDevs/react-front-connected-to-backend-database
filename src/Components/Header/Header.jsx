@@ -30,28 +30,32 @@ function Header() {
       return (
         <Row>
           <Navbar className='Navbar' expand="sm">
-            <Container>
+            <Container className='contnav' >
               <Navbar.Brand href="/">
               <Image className="logoImage zoomLogo" src={"../../logo.svg"}></Image>
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
-                  <Col>
-                    <Nav.Link href="/Movies">Movies</Nav.Link>
+              <Navbar.Collapse  id="basic-navbar-nav">
+                <Nav  className="me-auto">
+                  <Col lg={4}>
+                    <Nav.Link className='words1'  href="/Movies">Movies</Nav.Link>
                   </Col>
-                  <Col>
-                    <Nav.Link href="/Series">Series</Nav.Link>
+                  <Col lg={4}>
+                    <Nav.Link className='words1' href="/Series">Series</Nav.Link>
                   </Col>
-                  <Col>
-                    <Nav.Link href="/" onClick={logOutHandler}>Log Out</Nav.Link>
+                  <Col lg={4}>
+                    <Nav.Link className='words1' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
                   </Col>
+                  <Col/>
+                  <Col lg={4}>
                   <NavDropdown className='UserSettings' title={username} id="basic-nav-dropdown">
                     <NavDropdown.Item href="Settings">Account Settings</NavDropdown.Item>
                     <NavDropdown.Item href="/orders">
                       All Orders
                     </NavDropdown.Item>
                   </NavDropdown>
+                  </Col>
+
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -64,20 +68,20 @@ function Header() {
           <Navbar className='Navbar' expand="sm">
             <Container>
               <Navbar.Brand href="/">
-              <Image className="logoImage zoomLogo" src={"../../logo.svg"}></Image>
+              <Image className="logoImage zoomLogo" src="./img/movies-clip-art-look-at-movies-clip-art-clip-art-images-314296.png"></Image>
   
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                   <Col>
-                    <Nav.Link href="/Movies">Movies</Nav.Link>
+                    <Nav.Link className='words1' href="/Movies">Movies</Nav.Link>
                   </Col>
                   <Col>
-                    <Nav.Link href="/Series">Series</Nav.Link>
+                    <Nav.Link className='words1' href="/Series">Series</Nav.Link>
                   </Col>
                   <Col>
-                    <Nav.Link href="/" onClick={logOutHandler}>Log Out</Nav.Link>
+                    <Nav.Link className='words1 logout' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
                   </Col>
                   <NavDropdown className='UserSettings' title={username} id="basic-nav-dropdown">
                     <NavDropdown.Item href="Settings">Account Settings</NavDropdown.Item>
@@ -97,21 +101,21 @@ function Header() {
       <Row>
         <Navbar className='Navbar' expand="sm">
           <Container>
-            <Navbar.Brand href="/">Home</Navbar.Brand>
+            <Navbar.Brand className='words1' href="/">Home</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Col>
-                  <Nav.Link href="/Movies">Movies</Nav.Link>
+                  <Nav.Link className='words1' href="/Movies">Movies</Nav.Link>
                 </Col>
                 <Col>
-                  <Nav.Link href="/Series">Series</Nav.Link>
+                  <Nav.Link className='words1' href="/Series">Series</Nav.Link>
                 </Col>
                 <Col>
-                  <Nav.Link href="/Login">Login</Nav.Link>
+                  <Nav.Link className='words1' href="/Login">Login</Nav.Link>
                 </Col>
                 <Col>
-                  <Nav.Link href="/Register">Register</Nav.Link>
+                  <Nav.Link className='words1' href="/Register">Register</Nav.Link>
                 </Col>
               </Nav>
             </Navbar.Collapse>

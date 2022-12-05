@@ -1,9 +1,30 @@
-.moviesDesign {
+// .moviesDesign {
+//     display: flex;
+//     flex-direction: column;
+//     margin: 0 auto;
+//     max-width: 1200px;
+//     padding: 0 20px;
+    
+// }
+
+.containerprincipal{
+    background-color: rgb(0, 0, 0);
+    height: 89vh;
+    width: 164vw;
     display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 20px;
+    align-items: center;
+    
+
+    
+
+    
+}
+.containermovie{
+display: flex;
+margin: 10px;
+
+
+
     
 }
 
