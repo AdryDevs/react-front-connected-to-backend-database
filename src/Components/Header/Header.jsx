@@ -82,7 +82,7 @@ function Header() {
                   </Col>
                   <NavDropdown className='UserSettings' title={username} id="basic-nav-dropdown">
                     <NavDropdown.Item href="Settings">Account Settings</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
+                    <NavDropdown.Item href="/orders">
                       Orders
                     </NavDropdown.Item>
                   </NavDropdown>
