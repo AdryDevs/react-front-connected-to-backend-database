@@ -38,21 +38,25 @@ function Header() {
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse  id="basic-navbar-nav">
                 <Nav  className="me-auto">
-                  <Col>
+                  <Col lg={4}>
                     <Nav.Link className='words1'  href="/Movies">Movies</Nav.Link>
                   </Col>
-                  <Col>
+                  <Col lg={4}>
                     <Nav.Link className='words1' href="/Series">Series</Nav.Link>
                   </Col>
-                  <Col>
+                  <Col lg={4}>
                     <Nav.Link className='words1' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
                   </Col>
+                  <Col/>
+                  <Col lg={4}>
                   <NavDropdown className='UserSettings' title={username} id="basic-nav-dropdown">
                     <NavDropdown.Item className='words1' href="Settings">Account Settings</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">
                       All Orders
                     </NavDropdown.Item>
                   </NavDropdown>
+                  </Col>
+
                 </Nav>
               </Navbar.Collapse>
             </Container>
