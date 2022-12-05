@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import SerieBox from '../../Components/SerieBox';
+import './Series.scss'
 
 const API_URL= "https://proyectobackendpeliculas-production.up.railway.app/series/";
 
@@ -24,7 +25,7 @@ const Series = () => {
       console.log(series);
     
       return (
-     <Container fluid>
+     <Container fluid className='containerseries'>
         <Row d-flex justify-content-center>
                 {series.map((serie) => {
                   return (
