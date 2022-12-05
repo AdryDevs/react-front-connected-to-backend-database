@@ -30,10 +30,9 @@ function Header() {
       return (
         <Row>
           <Navbar className='Navbar' expand="sm">
-            <Container className='contnav'>
+            <Container className='contnav' >
               <Navbar.Brand href="/">
               <Image className="logoImage zoomLogo" src={"../../logo.svg"}></Image>
-  
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse  id="basic-navbar-nav">
@@ -50,8 +49,8 @@ function Header() {
                   <Col/>
                   <Col lg={4}>
                   <NavDropdown className='UserSettings' title={username} id="basic-nav-dropdown">
-                    <NavDropdown.Item className='words1' href="Settings">Account Settings</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
+                    <NavDropdown.Item href="Settings">Account Settings</NavDropdown.Item>
+                    <NavDropdown.Item href="/orders">
                       All Orders
                     </NavDropdown.Item>
                   </NavDropdown>
@@ -69,7 +68,7 @@ function Header() {
           <Navbar className='Navbar' expand="sm">
             <Container>
               <Navbar.Brand href="/">
-              <Image className="logoImage zoomLogo" src={"../../logo.svg"}></Image>
+              <Image className="logoImage zoomLogo" src="./img/movies-clip-art-look-at-movies-clip-art-clip-art-images-314296.png"></Image>
   
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -82,11 +81,11 @@ function Header() {
                     <Nav.Link className='words1' href="/Series">Series</Nav.Link>
                   </Col>
                   <Col>
-                    <Nav.Link className='words1' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
+                    <Nav.Link className='words1 logout' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
                   </Col>
                   <NavDropdown className='UserSettings' title={username} id="basic-nav-dropdown">
-                    <NavDropdown.Item className='words1' href="Settings">Account Settings</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
+                    <NavDropdown.Item href="Settings">Account Settings</NavDropdown.Item>
+                    <NavDropdown.Item href="/orders">
                       Orders
                     </NavDropdown.Item>
                   </NavDropdown>
