@@ -24,7 +24,7 @@ const Movies = () => {
   
 
   return (
-    <Container fluid className='containermovie'>
+    <Container fluid className='moviesDesign'>
       <Row  d-flex justify-content-center>
             {movies.map((movie) => {
               return (

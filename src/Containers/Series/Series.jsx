@@ -25,7 +25,7 @@ const Series = () => {
       console.log(series);
     
       return (
-     <Container fluid className='containerseries'>
+     <Container fluid className='seriesDesign'>
         <Row d-flex justify-content-center>
                 {series.map((serie) => {
                   return (
