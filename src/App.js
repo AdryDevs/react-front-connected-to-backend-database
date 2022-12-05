@@ -12,6 +12,7 @@ import Home from './Containers/Home/Home';
 import Header from './Components/Header/Header';
 import Movies from "./Containers/Movies/Movies";
 import Series from './Containers/Series/Series';
+import Orders from './Containers/Orders/Orders';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from "./Containers/LoginContainer/LoginContainer";
 import Register from "./Containers/RegisterContainer/RegisterContainer";
@@ -33,6 +34,7 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/series" element={<Series/>}/>
           <Route path="/settings" element={<Settings/>}/>
+          <Route path="/orders" element={<Orders/>}/>
 
         </Routes>
       </BrowserRouter>     
