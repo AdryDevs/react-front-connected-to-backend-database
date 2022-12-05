@@ -25,8 +25,8 @@ const Series = () => {
       console.log(series);
     
       return (
-     <Container fluid className='containerseries'>
-        <Row className='bootstrap-row' d-flex justify-content-center>
+     <Container fluid className='seriesDesign'>
+        <Row d-flex justify-content-center>
                 {series.map((serie) => {
                   return (
                   <Col xs={12} sm={5} md={4} lg={3}>
