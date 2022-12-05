@@ -33,7 +33,6 @@ function Header() {
             <Container>
               <Navbar.Brand href="/">
               <Image className="logoImage zoomLogo" src={"../../logo.svg"}></Image>
-  
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">

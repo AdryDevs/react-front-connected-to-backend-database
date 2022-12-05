@@ -32,7 +32,7 @@ const Orders = () => {
 
   return (
     
-    <section className="vh-100" style={{ backgroundColor: "#fdccbc" }}>
+    <section className="vh-100" style={{ backgroundColor: "#eeeee4" }}>
       <MDBContainer className="h-100">
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol>
