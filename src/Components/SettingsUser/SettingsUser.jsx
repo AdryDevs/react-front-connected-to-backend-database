@@ -70,22 +70,6 @@ const SettingsUser = () => {
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
                     {errors.username}
-
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group  controlId='email'>
-                <Form.Label className='words'>Email</Form.Label>
-                <Form.Control
-                    type='email'
-                    placeholder='Enter email'
-                    value={form.email}
-                    onChange={(e) => setField('email', e.target.value)}
-                    isInvalid={!!errors.email}
-                    className= 'Edit'
-                >
-                </Form.Control>
-                <Form.Control.Feedback type='invalid'>
-                    {errors.email}
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='password'>

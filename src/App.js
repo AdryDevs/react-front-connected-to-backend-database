@@ -17,6 +17,7 @@ import Login from "./Containers/LoginContainer/LoginContainer";
 import Register from "./Containers/RegisterContainer/RegisterContainer";
 import { UserProvider } from './UserProvider';
 import Settings from "./Containers/SettingsContainers/SettingsContainer"
+import Orders from "./Containers/Orders/Orders"
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/series" element={<Series/>}/>
           <Route path="/settings" element={<Settings/>}/>
+          <Route path="/orders" element={<Orders/>}/>
 
         </Routes>
       </BrowserRouter>     

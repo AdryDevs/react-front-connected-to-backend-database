@@ -23,7 +23,8 @@
     "react-scripts": "5.0.1",
     "sass": "^1.56.1",
     "web-vitals": "^2.1.4",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "mdb-react-ui-kit": "5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
