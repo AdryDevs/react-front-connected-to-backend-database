@@ -31,9 +31,7 @@ function Header() {
         <Row>
           <Navbar className='Navbar' expand="sm">
             <Container className='contnav' >
-              <Navbar.Brand href="/">
-              <Image className="logoImage zoomLogo" src={"/img/1.png"}></Image>
-              </Navbar.Brand>
+            <Navbar.Brand className='words1' href="/">Home</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse  id="basic-navbar-nav">
                 <Nav  className="me-auto">
@@ -67,10 +65,7 @@ function Header() {
         <Row>
           <Navbar className='Navbar' expand="sm">
             <Container>
-              <Navbar.Brand href="/">
-              <Image className="logoImage zoomLogo" src="./img/movies-clip-art-look-at-movies-clip-art-clip-art-images-314296.png"></Image>
-  
-              </Navbar.Brand>
+            <Navbar.Brand className='words1' href="/">Home</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
