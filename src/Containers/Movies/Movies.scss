@@ -4,7 +4,7 @@
 //     margin: 0 auto;
 //     max-width: 1200px;
 //     padding: 0 20px;
-    
+
 // }
 
 .containerprincipal{
@@ -13,11 +13,11 @@
     width: 164vw;
     display: flex;
     align-items: center;
-    
 
-    
 
-    
+
+
+
 }
 .containermovie{
 display: flex;
@@ -25,10 +25,13 @@ margin: 10px;
 
 
 
-    
+
 }
 
-.containermovie{
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
+.grid{
+
+    display: flex;
+grid-template-columns: 1fr, 1fr, 1fr, 1fr;
 }
+
 
