@@ -74,13 +74,13 @@ function Header() {
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                  <Col>
+                <Col lg={4}>
                     <Nav.Link className='words1' href="/Movies">Movies</Nav.Link>
                   </Col>
-                  <Col>
+                  <Col lg={4}>
                     <Nav.Link className='words1' href="/Series">Series</Nav.Link>
                   </Col>
-                  <Col>
+                  <Col lg={4}>
                     <Nav.Link className='words1 logout' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
                   </Col>
                   <NavDropdown className='UserSettings' title={username} id="basic-nav-dropdown">
