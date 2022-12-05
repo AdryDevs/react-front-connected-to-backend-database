@@ -13,11 +13,11 @@ function Home() {
 
         <Col> 
           <div className='divtext' >
-            Are your redy for the beast series in the world?<br />
-            Disfruta de un mundo lleno de<br />
-            posibilidades y
-            aventuras en<br />
-            film FRESAS<br />
+          <br/><br/><br/>
+            <h2 className='text1'>Welcome to our Rental!</h2><br/>
+            <h4 className='text2'>We have the best movies and series for you!</h4>
+            <br/><br/><br/><br/>
+            <h4>If you have an account with us, go to the login section. If you don't, feel free to register</h4>
 
           </div>
         </Col>
