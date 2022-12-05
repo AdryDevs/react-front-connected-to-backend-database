@@ -78,7 +78,7 @@ function Header() {
                     <Nav.Link className='words1' href="/Series">Series</Nav.Link>
                   </Col>
                   <Col>
-                    <Nav.Link className='words1' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
+                    <Nav.Link className='words1 logout' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
                   </Col>
                   <NavDropdown title={username} id="basic-nav-dropdown">
                     <NavDropdown.Item  href="Settings">Account Settings</NavDropdown.Item>
