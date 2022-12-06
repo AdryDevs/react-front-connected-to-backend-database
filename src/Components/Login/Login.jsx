@@ -4,10 +4,13 @@ import { Form, Button } from 'react-bootstrap';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useUserToggleContext } from "../../UserProvider";
-import { render } from "@testing-library/react";
+
 const Login = () => {
     const navigate = useNavigate();
-    const [form, setForm] = useState({});
+    const [form, setForm] = useState({
+        email:'',
+        password:''
+    });
     const [errors, setErrors] = useState({});
     const setField = (field, value) => {
         setForm({
@@ -55,9 +58,6 @@ const Login = () => {
                 newErrors.noLogin="Unable to login,check your credentials"
                 setErrors(newErrors);
             });
-            // if (Object.keys(formErrors).length > 0) {
-            //     setErrors(formErrors);
-            // }
         }
     }
 

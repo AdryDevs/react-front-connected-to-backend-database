@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Home() {
   return (
-    <Row className='Fila' fluid>
+    <Row className='Fila'>
       <Col xs={10} sm={7} md={6} lg={5}> 
           <div className='divtext' >
           <br/><br/><br/>

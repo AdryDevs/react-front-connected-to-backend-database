@@ -3,30 +3,30 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Row, Col } from 'react-bootstrap';
-import Image from "react-bootstrap/Image";
 import { useUserContext } from '../../UserProvider';
+import { useJwt } from "react-jwt";
 import './Header.scss'
 
 function Header() {
-  //HARDCODEAR JWT
-  // let jwt="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJjcmVhdGVkIjoxNjY5ODMyOTk0NDEwLCJpYXQiOjE2Njk4MzI5OTR9.WG6ZwhsqmLdEmxA_eK6RY3L5Gi7lKrcOKjGUCEn5WSs";
-  // localStorage.setItem('jwt', JSON.stringify(jwt));
+
   const user = useUserContext();
   const token = localStorage.getItem('jwt');
-  const username = localStorage.getItem('username'.toString());
-  const isAdmin = localStorage.getItem('isAdmin');
+  const { decodedToken, isExpired } = useJwt(token);
+  let username='';
+  let isAdmin=false;
+  if (decodedToken) {
+       username=decodedToken.username;
+      if (decodedToken.role===1) {
+        isAdmin=true;
+      }
+  }
 
-  console.log(user)
+
   function logOutHandler() {
     localStorage.removeItem("jwt");
-    localStorage.removeItem("username");
-    localStorage.removeItem("isAdmin")
-
-
   }
-  console.log(isAdmin);
-  if (token) {
-    if (isAdmin==true) {
+  if (decodedToken&&!!isExpired) {
+    if (isAdmin===true) {
       return (
         <Row>
           <Navbar className='Navbar' expand="sm">
