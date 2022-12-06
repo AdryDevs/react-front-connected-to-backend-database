@@ -38,17 +38,17 @@ Una vez echo esto ejecutamos el proyecto con:
 Al entrar en la web se muestra la vista Home,con un pequeño cuadro de dialogo
 indicando al usuario que se registre o loguee.
 
-{imagen login}
+![Uploading image.png…]
 
 En las secciones "Series" y "Movies" podemos encontrar un listado de las 
 peliculas y series que se encuentran en la base de datos. 
 
-{imagen vista general peliculas}
+![image](https://user-images.githubusercontent.com/50781684/206015002-898c7d81-0731-431a-b69e-d1c3a9986256.png)
 
 En la parte superior
 hay un buscador que nos permite filtrar la información por título,actores y género:
 
-{imagen con peliculas/series filtradas}
+![image](https://user-images.githubusercontent.com/50781684/206015168-f8b29a5f-aaa6-46ba-a2b1-c6231f9e5d24.png)
 
 Al clickar en una de las peliculas/series entramos a la vista de detalle
 donde podemos ver mas información del producto,también hay un botón que permite
@@ -60,12 +60,12 @@ En la vista de registro debemos ingresar los campos nombre de usuario,email,fech
 En caso de que los datos sean incorrectos,se muestra un mensaje de error debajo del input correspondiente.
 La contraseña debe estar compuesta por al menos 8 caracteres,una mayuscula,una minuscula y un número.
 
-{imagen de register}
+![image](https://user-images.githubusercontent.com/50781684/206019282-bbac576a-1157-479e-a5af-505ad1063b9b.png)
 
 Estando logueados podemos acceder a la vista de userSettings,donde el usuario
-puede modificar su nombre de usuario y/o contraseña.
+puede modificar su nombre de usuario y/o contraseña,no es necesario cambiar los 2 campos.
 
-{imagen de userSettings}
+![image](https://user-images.githubusercontent.com/50781684/206019594-62554159-4a8b-4a65-9fa2-eb85cae6c1aa.png)
 
 Por último,el usuario puede acceder a una vista con la información de sus
 articulos alquilados. El administrador aquí accede a una vista con todos los pedidos 
