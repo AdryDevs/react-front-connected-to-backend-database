@@ -77,14 +77,14 @@ const SettingsUser = () => {
                 <Form.Control
                     type='password'
                     placeholder='Enter your password'
-                    value={form.password2}
+                    value={form.password}
                     onChange={(e) => setField('password', e.target.value)}
                     isInvalid={!!errors.password2}
                     className= 'Edit'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
-                    {errors.password2}
+                    {errors.password}
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='password2'>
@@ -92,14 +92,14 @@ const SettingsUser = () => {
                 <Form.Control
                     type='password'
                     placeholder='Repeat your password'
-                    value={form.password3}
+                    value={form.password2}
                     onChange={(e) => setField('password2', e.target.value)}
-                    isInvalid={!!errors.password3}
+                    isInvalid={!!errors.password2}
                     className= 'Edit'
                 >
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
-                    {errors.password3}
+                    {errors.password2}
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className='CBoton' controlId='submit'>
