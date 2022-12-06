@@ -7,7 +7,7 @@ const SerieBox = ({serie}) => {
   const navigate = useNavigate();
 
     return (
-        <Card hoverable style={{width: 240,height: 365}}
+        <Card hoverable style={{width: 240,height: 365,margin:10}}
         cover={<img alt="serie_poster" src={serie.url_img} />}
         onClick={() => navigate(`/series/${serie.title}`)}>
         
