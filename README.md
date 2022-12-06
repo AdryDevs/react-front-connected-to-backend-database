@@ -38,7 +38,7 @@ Una vez echo esto ejecutamos el proyecto con:
 Al entrar en la web se muestra la vista Home,con un pequeño cuadro de dialogo
 indicando al usuario que se registre o loguee.
 
-![Uploading image.png…]
+![image](https://user-images.githubusercontent.com/50781684/206019857-895f0169-3375-4293-b2ba-a8ef3012a3e7.png)
 
 En las secciones "Series" y "Movies" podemos encontrar un listado de las 
 peliculas y series que se encuentran en la base de datos. 
