@@ -28,13 +28,14 @@ const RegisterContainer = () => {
         const { username, email, dob, password, password2 } = form;
         const newErrors = {};
         if (!username || username === 'Enter username') newErrors.username = 'Please enter a username'
-        if (!email || email === 'Enter email') newErrors.email = 'Please enter an email'
+        if (!email || email === 'Enter email'){
+            newErrors.email = 'Please enter an email'
+        } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(password)) newErrors.email = 'Please input a valid email'
         if (!dob || dob === '') newErrors.dob = 'Please enter your date of birth'
         if (!password || password === 'Enter your password') newErrors.password= 'Please enter a password'
         else {
             if (!/[?=.*[0-9]]*/.test(password)) newErrors.password = 'Password must contain a number'
             if (!/[?=.*[a-z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 lower case'
-            console.log(newErrors)
             if (!/[?=.*[A-Z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 upper case'
             if (!/[[a-zA-Z0-9]{8,}]*/.test(password)) newErrors.password = 'Password must contain at least 8 characters'
         }
@@ -123,8 +124,9 @@ const RegisterContainer = () => {
                     {errors.dob}
                 </Form.Control.Feedback>
             </Form.Group>
-            <Form.Label>Password</Form.Label>
             <Form.Group controlId='password' className='password'>
+            <Form.Label className='words'>Password</Form.Label>
+
                 <Form.Control
                     type='password'
                     placeholder='Enter your password'

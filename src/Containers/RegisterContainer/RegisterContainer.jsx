@@ -4,8 +4,7 @@ import Register from "../../Components/Register/Register";
 import './RegisterContainer.scss'
 const RegisterContainer = () => {
   return (
-    <Container fluid className='ContainerRegister'>
-      <Row>
+      <Row className='ContainerRegister'>
         <Col >
         </Col>
         <Col xs={10} sm={8} md={6} lg={5}>
@@ -13,7 +12,6 @@ const RegisterContainer = () => {
         </Col>
         <Col />
       </Row>
-    </Container>
   );
 }
 export default RegisterContainer;
