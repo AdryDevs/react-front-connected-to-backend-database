@@ -23,25 +23,27 @@ const Login = () => {
 
     const validateForm = () => {
         const { email, password } = form;
+        setErrors({
+            email:'',
+            password:'',
+            noLogin:''
+    })
         const newErrors = {};
         if (!email || email === 'Enter email') newErrors.email = 'Please enter an email'
         if (!password || password === 'Enter your password') newErrors.password = 'Please enter a password'
         return newErrors;
-
     }
     const changeLogin = useUserToggleContext();
 
-    const { email, password } = form;
-    const newErrors = {};
-    if (!email || email === 'Enter email') newErrors.email = 'Please enter an email'
-    if (!password || password === 'Enter your password') newErrors.password = 'Please enter a password'
-
     const handleSubmit = (e) => {
         e.preventDefault()
+        const newErrors={};
         const formErrors = validateForm();
         if (Object.keys(formErrors).length > 0) {
             setErrors(formErrors);
+            console.log(formErrors);
         }
+        else{
             axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/login", form)
             .then(response => {
                 localStorage.setItem('jwt', response.data.jwt);
@@ -50,15 +52,13 @@ const Login = () => {
                 changeLogin(response.data.username, response.data.admin);
                 navigate("/");
             }).catch(error => {
-                errors.noLogin="Unable to login,check your credentials"
-                console.log("SU PUTA MADREE");
-                console.log(errors.noLogin)
-                render();
+                newErrors.noLogin="Unable to login,check your credentials"
+                setErrors(newErrors);
             });
-            if (Object.keys(formErrors).length > 0) {
-                setErrors(formErrors);
-            }
-
+            // if (Object.keys(formErrors).length > 0) {
+            //     setErrors(formErrors);
+            // }
+        }
     }
 
     return (
@@ -87,7 +87,7 @@ const Login = () => {
                     placeholder='Enter your password'
                     value={form.password}
                     onChange={(e) => setField('password', e.target.value)}
-                    isInvalid={!!errors.email}
+                    isInvalid={!!errors.password}
                     className="input"
                 >
                 </Form.Control>
@@ -106,7 +106,7 @@ const Login = () => {
             <Form.Control.Feedback type='invalid'>
             {errors.noLogin}
                 </Form.Control.Feedback>
-            <p className="error"></p>
+            <p className="error">{errors.noLogin}</p>
 
             </Form.Group>
         </Form>
