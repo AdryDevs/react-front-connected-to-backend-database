@@ -15,7 +15,7 @@ function Home() {
             <h2>Welcome to our Rental!</h2><br/>
             <h4>We have the best movies and series for you!</h4>
             <br/><br/><br/><br/>
-            <h4>If you have an account with us, go to the <a href='/login'>login</a> section. If you don't, feel free to <a href='/login'>Register</a></h4>
+            <h4>If you have an account with us, go to the <a href='/login'>login</a> section. If you don't, feel free to <a href='/login'>register</a></h4>
 
           </div>
         </Col>
