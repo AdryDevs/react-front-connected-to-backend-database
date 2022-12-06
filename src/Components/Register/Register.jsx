@@ -27,6 +27,7 @@ const RegisterContainer = () => {
     const validateForm = () => {
         const { username, email, dob, password, password2 } = form;
         const newErrors = {};
+        
         if (!username || username === 'Enter username') newErrors.username = 'Please enter a username'
         if (!email || email === 'Enter email'){
             newErrors.email = 'Please enter an email'
