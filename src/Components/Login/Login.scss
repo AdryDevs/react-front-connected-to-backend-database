@@ -35,10 +35,6 @@ border-radius: 5%;
     justify-content: center;
 
 }
-.textlogin{
-    margin-left: 10px;
-    color: white;
-}
 
 Boton::before {
     content: "";
@@ -68,12 +64,6 @@ Boton::before {
     100% {
         background-position: 0 0;
     }
-}
-
-.CBoton {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
 }
 
 .error{

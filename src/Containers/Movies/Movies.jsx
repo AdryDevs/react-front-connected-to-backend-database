@@ -37,9 +37,6 @@ const Movies = () => {
 
   }, [search])
 
-  
-  
-
   return (
     <Container fluid className='containermovie'>
       <Row className='d-flex justify-content-center align-items-center mt-1'>
