@@ -8,11 +8,11 @@ const MovieDetail = ({ movie }) => {
     return (
         <div>
             <div onClick={() => state.resetMovie()}>
-                <h4>Back</h4>
+                <h4 className="back">Back</h4>
             </div>
-        <h1>{movie.title}</h1>
+        <h1 className="texto">{movie.title}</h1>
         <img src={movie.url_img} />
-        <p>{movie.synopsis}</p>
+        <p className="texto">{movie.synopsis}</p>
         </div>
     );
     }
