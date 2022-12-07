@@ -9,6 +9,7 @@ import {
     MDBIcon,
     MDBRow,
 } from "mdb-react-ui-kit";
+import { useJwt } from "react-jwt";
 import axios from "axios";
 
 const API_URL = "https://proyectobackendpeliculas-production.up.railway.app/orders/getUserOrders";
@@ -18,31 +19,45 @@ const Orders = () => {
 
     const username = localStorage.getItem('username'.toString());
     const token = localStorage.getItem("jwt");
+    let isAdmin = false;
     const config = {
         headers: { Authorization: `Bearer ${token}` },
     };
-
+    const { decodedToken, isExpired } = useJwt(token);
     const [orders, setOrders] = useState([]);
-
-    useEffect(() => {
-        axios.get(API_URL, config)
-            .then((res) => {
-                console.log(res.data);
-                setOrders(res.data);
-            })
-    }, [])
+    if (decodedToken) {
+        if (decodedToken.role === 1) {
+            console.log("WTF")
+            isAdmin = true;
+        }
+    }
+    // useEffect(() => {
+    //     axios.get(API_URL, config)
+    //         .then((res) => {
+    //             console.log(res.data);
+    //             setOrders(res.data);
+    //         })
+    // }, [])
 
     const [ordersAdmin, setOrdersAdmin] = useState([]);
 
-    useEffect(() => {
-        axios.get(API_URL_Admin, config)
-            .then((res) => {
-                console.log(res.data);
-                setOrdersAdmin(res.data);
-            })
-    }, [])
+        if (isAdmin == true) {
+            console.log("Admin");
+            axios.get(API_URL_Admin, config)
+                .then((res) => {
+                    console.log(res.data);
+                    setOrdersAdmin(res.data);
+                })
+        } else {
+            console.log("User");
 
-    const isAdmin = localStorage.getItem('isAdmin');
+            axios.get(API_URL, config)
+                .then((res) => {
+                    console.log(res.data);
+                    setOrders(res.data);
+                }
+                )
+        }
 
     if (token) {
         if (isAdmin == true) {
@@ -58,15 +73,15 @@ const Orders = () => {
                                     <MDBCardBody className="p-4">
                                         <MDBRow className="align-items-center">
                                             <MDBCol md="2">
-                                            {ordersAdmin.map((order) => {
-                                                        return (
-                                                <MDBCardImage
-                                                    fluid
-                                                    src={order.url_img}
-                                                    alt="Movie poster"
-                                                    />
-                                                        );
-                                                    })}
+                                                {ordersAdmin.map((order) => {
+                                                    return (
+                                                        <MDBCardImage
+                                                            fluid
+                                                            src={order.url_img}
+                                                            alt="Movie poster"
+                                                        />
+                                                    );
+                                                })}
                                             </MDBCol>
                                             <MDBCol md="2" className="d-flex justify-content-center">
                                                 <div>
@@ -131,15 +146,15 @@ const Orders = () => {
                                     <MDBCardBody className="p-4">
                                         <MDBRow className="align-items-center">
                                             <MDBCol md="2">
-                                            {orders.map((order) => {
-                                                        return (
-                                                <MDBCardImage
-                                                    fluid
-                                                    src={order.url_img}
-                                                    alt="Movie poster"
-                                                    />
-                                                        );
-                                                    })}
+                                                {orders.map((order) => {
+                                                    return (
+                                                        <MDBCardImage
+                                                            fluid
+                                                            src={order.url_img}
+                                                            alt="Movie poster"
+                                                        />
+                                                    );
+                                                })}
                                             </MDBCol>
                                             <MDBCol md="2" className="d-flex justify-content-center">
                                                 <div>

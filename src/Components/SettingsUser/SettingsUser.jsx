@@ -23,7 +23,6 @@ const SettingsUser = () => {
     const validateForm = () => {
         const { username, email, password, password2 } = form;
         const newErrors = {};
-        console.log("PAAAAASSSS:::"+password);
             if (password&&!/[?=.*[0-9]]*/.test(password)) newErrors.password = 'Password must contain a number'
             if (password&&!/[?=.*[a-z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 lower case'
             console.log(newErrors)
