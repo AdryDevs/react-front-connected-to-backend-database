@@ -32,7 +32,9 @@ const Login = () => {
             noLogin:''
     })
         const newErrors = {};
-        if (!email || email === 'Enter email') newErrors.email = 'Please enter an email'
+        if (!email || email === 'Enter email'){
+            newErrors.email = 'Please enter an email'
+        } else if (!/.+\@.+\..+/.test(email)) newErrors.email = 'Please input a valid email'
         if (!password || password === 'Enter your password') newErrors.password = 'Please enter a password'
         return newErrors;
     }

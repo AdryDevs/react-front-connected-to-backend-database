@@ -31,7 +31,7 @@ const RegisterContainer = () => {
         if (!username || username === 'Enter username') newErrors.username = 'Please enter a username'
         if (!email || email === 'Enter email'){
             newErrors.email = 'Please enter an email'
-        } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(password)) newErrors.email = 'Please input a valid email'
+        } else if (!/.+\@.+\..+/.test(email)) newErrors.email = 'Please input a valid email'
         if (!dob || dob === '') newErrors.dob = 'Please enter your date of birth'
         if (!password || password === 'Enter your password') newErrors.password= 'Please enter a password'
         else {

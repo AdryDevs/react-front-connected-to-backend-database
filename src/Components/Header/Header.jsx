@@ -32,7 +32,7 @@ function Header() {
           <Navbar className='Navbar' expand="sm">
             <Container className='contnav' >
             <Navbar.Brand className='words1' href="/">Home</Navbar.Brand>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Toggle className="collapse" aria-controls="basic-navbar-nav" />
               <Navbar.Collapse  id="basic-navbar-nav">
                 <Nav  className="me-auto">
                   <Col lg={4}>
