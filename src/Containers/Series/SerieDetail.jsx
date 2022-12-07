@@ -1,9 +1,6 @@
 import React from "react";
 import state from '../../state';
 
-
-
-
 const SerieDetail = ({ serie }) => {
     return (
         <div>
@@ -16,7 +13,5 @@ const SerieDetail = ({ serie }) => {
         </div>
     );
     }
-
-
 
 export default SerieDetail;
