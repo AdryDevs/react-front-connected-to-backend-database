@@ -42,9 +42,11 @@ const Series = observer( () => {
       }, [search])
     
     if (state.serie){
-      <SerieDetail>
-        serie={state.serie}
+      return (
+      <SerieDetail
+        serie={state.serie} >
       </SerieDetail>
+      )
     }else {
       return (
      <Container fluid className='seriesDesign'>

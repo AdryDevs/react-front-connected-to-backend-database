@@ -45,7 +45,6 @@ if (state.movie){
     movie={state.movie} >
     </MovieDetail>
   )
-  
 }else {
   return (
     <Container fluid className='containermovie'>
