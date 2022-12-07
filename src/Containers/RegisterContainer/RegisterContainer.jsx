@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import {Row, Col } from 'react-bootstrap';
 import Register from "../../Components/Register/Register";
 import './RegisterContainer.scss'
 const RegisterContainer = () => {
