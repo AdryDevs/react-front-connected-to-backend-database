@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react'
 import "./Movies.scss";
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import MovieBox from '../../Components/MovieBox';
+import state from '../../state';
+import { observer } from "mobx-react-lite";
+import MovieDetail from './MovieDetail';
 
 
 
 const API_URL= "https://proyectobackendpeliculas-production.up.railway.app/movies/";
 const API_URL_SEARCH="https://proyectobackendpeliculas-production.up.railway.app/movies/search/";
 
-const Movies = () => {
+const Movies = observer( () => {
 
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState(['']);
@@ -34,10 +37,17 @@ const Movies = () => {
         setMovies(data);
       })
     }
-
+  
   }, [search])
 
-
+if (state.movie){
+  return (
+    <MovieDetail 
+    movie={state.movie} >
+    </MovieDetail>
+  )
+  
+}else {
   return (
     <Container fluid className='containermovie'>
       <Row className='d-flex justify-content-center align-items-center mt-1'>
@@ -58,8 +68,8 @@ const Movies = () => {
               })}
       </Row>
     </Container>
-  );
+  )}
 }
-
+)
 
 export default Movies;

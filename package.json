@@ -13,6 +13,8 @@
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",
     "jwt-decode": "^3.1.2",
+    "mdb-react-ui-kit": "5.0.0",
+    "mobx-react-lite": "^3.4.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
@@ -23,8 +25,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.56.1",
     "web-vitals": "^2.1.4",
-    "yup": "^0.32.11",
-    "mdb-react-ui-kit": "5.0.0"
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

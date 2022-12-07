@@ -58,14 +58,15 @@ const Orders = () => {
                                     <MDBCardBody className="p-4">
                                         <MDBRow className="align-items-center">
                                             <MDBCol md="2">
+                                            {ordersAdmin.map((order) => {
+                                                        return (
                                                 <MDBCardImage
                                                     fluid
-                                                    src={ordersAdmin.map((order) => {
-                                                        return (
-                                                            <img src={order.url_img} alt="Movie_picture" />
-                                                        )
+                                                    src={order.url_img}
+                                                    alt="Movie poster"
+                                                    />
+                                                        );
                                                     })}
-                                                />
                                             </MDBCol>
                                             <MDBCol md="2" className="d-flex justify-content-center">
                                                 <div>
@@ -130,14 +131,15 @@ const Orders = () => {
                                     <MDBCardBody className="p-4">
                                         <MDBRow className="align-items-center">
                                             <MDBCol md="2">
+                                            {orders.map((order) => {
+                                                        return (
                                                 <MDBCardImage
                                                     fluid
-                                                    src={orders.map((order) => {
-                                                        return (
-                                                            <img src={order.url_img} alt="Movie_picture" />
-                                                        )
+                                                    src={order.url_img}
+                                                    alt="Movie poster"
+                                                    />
+                                                        );
                                                     })}
-                                                />
                                             </MDBCol>
                                             <MDBCol md="2" className="d-flex justify-content-center">
                                                 <div>

@@ -1,10 +1,10 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // Import the component
 
@@ -24,26 +24,25 @@ function App() {
   return (
 
     <UserProvider>
-    <Container fluid className="App">
-      <BrowserRouter>
-        <Header/>
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/movies" element={<Movies/>}/>
-          <Route path="/register" element={<Register/>}/>
-          <Route path="/series" element={<Series/>}/>
-          <Route path="/settings" element={<Settings/>}/>
-          <Route path="/orders" element={<Orders/>}/>
-
-        </Routes>
-      </BrowserRouter>     
-    </Container>
+      <Container fluid className="App">
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/series" element={<Series />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/orders" element={<Orders />} />
+          </Routes>
+        </BrowserRouter>
+      </Container>
     </UserProvider>
   );
 
-  
-} 
+
+}
 
 
 
