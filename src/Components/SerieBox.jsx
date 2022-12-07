@@ -1,16 +1,13 @@
 import React from 'react';
 import { Card } from 'antd';
-import { useNavigate } from "react-router-dom";
+import state from '../state';
 
 const SerieBox = ({serie}) => {
-  
-  const navigate = useNavigate();
 
     return (
         <Card hoverable style={{width: 240,height: 365,margin:10}}
         cover={<img alt="serie_poster" src={serie.url_img} />}
-        onClick={() => navigate(`/series/${serie.title}`)}>
-        
+        onClick={() => state.setSerie(serie)}>
       </Card>
     );
 };

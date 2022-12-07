@@ -4,7 +4,7 @@ import state from '../../state';
 const SerieDetail = ({ serie }) => {
     return (
         <div>
-            <div onClick={() => state.resetserie()}>
+            <div onClick={() => state.resetSerie()}>
                 <h4>Back</h4>
             </div>
         <h1>{serie.title}</h1>
