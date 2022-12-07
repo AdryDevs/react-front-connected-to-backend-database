@@ -7,7 +7,6 @@ import { observer } from "mobx-react-lite";
 import MovieDetail from './MovieDetail';
 
 
-
 const API_URL= "https://proyectobackendpeliculas-production.up.railway.app/movies/";
 const API_URL_SEARCH="https://proyectobackendpeliculas-production.up.railway.app/movies/search/";
 

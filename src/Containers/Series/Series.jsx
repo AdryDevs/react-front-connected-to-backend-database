@@ -5,11 +5,15 @@ import { Container } from 'react-bootstrap';
 import { Row, Col, Form } from 'react-bootstrap';
 import SerieBox from '../../Components/SerieBox';
 import './Series.scss'
+import SerieDetail from './SerieDetail';
+import { observer } from 'mobx-react-lite';
+import state from '../../state';
+
 
 const API_URL= "https://proyectobackendpeliculas-production.up.railway.app/series/";
 const API_URL_SEARCH="https://proyectobackendpeliculas-production.up.railway.app/series/search/";
 
-const Series = () => {
+const Series = observer( () => {
     
       const [series, setSeries] = useState([]);
       const [search, setSearch] = useState(['']);
@@ -37,9 +41,11 @@ const Series = () => {
     
       }, [search])
     
-    
-      console.log(series);
-    
+    if (state.serie){
+      <SerieDetail>
+        serie={state.serie}
+      </SerieDetail>
+    }else {
       return (
      <Container fluid className='seriesDesign'>
             <Row className='d-flex justify-content-center align-items-center mt-1'>
@@ -61,6 +67,7 @@ const Series = () => {
         </Row>
      </Container>
       );
-    }
+    }}
+)
 
 export default Series;
