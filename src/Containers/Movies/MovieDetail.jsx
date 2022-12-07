@@ -1,6 +1,8 @@
 import React from "react";
 import state from '../../state';
 
+import './MovieDetail.scss'
+
 
 const MovieDetail = ({ movie }) => {
     return (

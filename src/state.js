@@ -14,6 +14,15 @@ class State {
   resetMovie() {
     this.movie = null;
   }
+
+  serie = null;
+
+  setSerie(serie) {
+    this.serie= serie;
+  }
+  resetSerie() {
+    this.serie = null;
+  }
 }
 
 export default new State();
