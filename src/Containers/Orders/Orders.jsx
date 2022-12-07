@@ -27,7 +27,6 @@ const Orders = () => {
     const [orders, setOrders] = useState([]);
     if (decodedToken) {
         if (decodedToken.role === 1) {
-            console.log("WTF")
             isAdmin = true;
         }
     }
